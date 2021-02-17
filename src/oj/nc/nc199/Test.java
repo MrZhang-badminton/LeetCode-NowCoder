@@ -38,8 +38,8 @@ public class Test {
 	}
 
 	public static void main(String[] args) {
-//		int[] arr = new int[]{4, 5, 1, 6, 2, 7, 3, 8};
-//		System.out.println(GetLeastNumbers_Solution(arr, 4));
+		int[] arr = new int[]{4, 5, 1, 6, 2, 7, 3, 8};
+		System.out.println(GetLeastNumbers_Solution(arr, 4));
 		
 	}
 }
