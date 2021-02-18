@@ -4,6 +4,7 @@ public class Solution {
 
 
 	public static int search(int[] nums, int target) {
+
 		if (nums.length == 0) {
 			return -1;
 		}
@@ -35,6 +36,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(search(new int[]{3,5, 1}, 0));
+		System.out.println(search(new int[]{3, 5, 1}, 0));
 	}
+	
 }
