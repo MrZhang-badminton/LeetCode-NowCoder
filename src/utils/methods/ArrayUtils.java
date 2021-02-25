@@ -1,6 +1,10 @@
 package utils.methods;
 
 public class ArrayUtils {
+	/**
+	 * 打印数组
+	 * @param nums
+	 */
 	public static void printArray(int[] nums){
 		System.out.print("[");
 		for (int i = 0; i < nums.length; i++) {
