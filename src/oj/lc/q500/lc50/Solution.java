@@ -1,4 +1,4 @@
-package oj.lc.q1000.lc50;
+package oj.lc.q500.lc50;
 
 public class Solution {
 
