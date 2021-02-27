@@ -1,5 +1,8 @@
 package oj.lc.q500.lc14;
 
+/**
+ * @date 2021年02月25日20:56:39
+ */
 public class Solution {
 	public static String longestCommonPrefix(String[] strs) {
 		int n = strs.length;
