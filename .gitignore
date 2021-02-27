@@ -6,3 +6,6 @@
 
 #忽略所有.class
 .class
+
+#忽略mac隐藏文件
+.DS_Store
