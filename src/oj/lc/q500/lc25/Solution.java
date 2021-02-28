@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 每K个翻转链表
+ * 设置pHead结点
  *
  * @date 2021年02月28日14:12:04
  */
