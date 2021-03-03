@@ -4,8 +4,8 @@
 *.iml
 *.ipr
 
-#忽略所有.class
-.class
+#忽略所有class文件
+out
 
 #忽略mac隐藏文件
 .DS_Store
