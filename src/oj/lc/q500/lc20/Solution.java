@@ -9,6 +9,7 @@ import java.util.Map;
  * @date 2021年02月24日11:02:12
  */
 public class Solution {
+
 	/**
 	 * 注意学习本体用到的Map映射，代替最原始的switch
 	 *
