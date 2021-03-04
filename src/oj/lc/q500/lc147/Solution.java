@@ -1,4 +1,4 @@
-package oj.lc.temp.lc147;
+package oj.lc.q500.lc147;
 
 import utils.object.ListNode;
 
