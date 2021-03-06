@@ -46,6 +46,7 @@ public class Solution {
 	 */
 	public static int largestRectangleArea2(int[] heights) {
 		int n = heights.length;
+		//时间换空间设置left、right数组
 		int[] left = new int[n];
 		int[] right = new int[n];
 		Arrays.fill(right, n);
