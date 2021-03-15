@@ -1,4 +1,4 @@
-package oj.lc.temp.lc74;
+package oj.lc.q500.lc74;
 
 /**
  * @date 2021年03月13日15:30:15
