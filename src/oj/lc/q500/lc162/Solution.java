@@ -1,4 +1,4 @@
-package oj.lc.temp.lc162;
+package oj.lc.q500.lc162;
 
 public class Solution {
 	/**
