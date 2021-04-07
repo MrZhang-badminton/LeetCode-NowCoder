@@ -3,15 +3,23 @@ package oj.lc.q500.lc22;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Peter
+ * <p>
+ * 解题思路
+ * 就是任何时刻，右括号不能比左括号多，左括号不能超过n
+ * 当左右括号的数量都为n的时候就可以将结果添加到结果集合中
+ */
 public class Solution {
 
 	/**
-	 * 法一：递归
+	 * 法一（复杂写法）：dfs
 	 * 在某一时刻左括号的数量永远比右括号大或等于
 	 */
-	private static List<String> ansList = new ArrayList<>();
+	private static List<String> ansList;
 
 	public static List<String> generateParenthesis(int n) {
+		ansList = new ArrayList<>();
 		if (n <= 0) {
 			return ansList;
 		}
@@ -35,14 +43,41 @@ public class Solution {
 	}
 
 	/**
-	 * 法二：回溯法
+	 * 法一（简便写法）:dfs
 	 *
+	 * @param n
+	 * @return
+	 */
+	private static List<String> retList;
+
+	public static List<String> generateParenthesis2(int n) {
+		retList = new ArrayList<>();
+		dfs("", n, 0, 0);
+		return retList;
+	}
+
+	public static void dfs(String s, int n, int lc, int rc) {
+		if (rc > lc || lc > n) {
+			return;
+		}
+		if (lc == n && rc == n) {
+			retList.add(s);
+		}
+		dfs(s + "(", n, lc + 1, rc);
+		dfs(s + ")", n, lc, rc + 1);
+
+	}
+
+
+	/**
+	 * 法二：回溯法
+	 * <p>
 	 * 回溯法最核心的就是遍历 + 还原
 	 *
 	 * @param n
 	 * @return
 	 */
-	public static List<String> generateParenthesis2(int n) {
+	public static List<String> generateParenthesis3(int n) {
 		List<String> ansList = new ArrayList<>();
 		fuc(ansList, new StringBuilder(), 0, 0, n);
 		return ansList;
