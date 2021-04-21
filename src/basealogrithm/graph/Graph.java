@@ -1,4 +1,4 @@
-package exercises.graph;
+package basealogrithm.graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
