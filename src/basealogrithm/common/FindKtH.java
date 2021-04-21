@@ -11,10 +11,10 @@ public class FindKtH {
 	}
 
 	public static int findK(int[] arr, int k) {
-		return partion(arr, 0, arr.length - 1, k - 1);
+		return partition(arr, 0, arr.length - 1, k - 1);
 	}
 
-	public static int partion(int[] arr, int left, int right, int index) {
+	public static int partition(int[] arr, int left, int right, int index) {
 		int pivot = arr[left];
 		int l = left, r = right;
 		while (l < r) {
@@ -34,9 +34,9 @@ public class FindKtH {
 		if (l == index) {
 			ans = pivot;
 		} else if (l < index) {
-			ans = partion(arr, l + 1, right, index);
+			ans = partition(arr, l + 1, right, index);
 		} else {
-			ans = partion(arr, left, l - 1, index);
+			ans = partition(arr, left, l - 1, index);
 		}
 
 		return ans;

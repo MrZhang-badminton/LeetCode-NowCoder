@@ -6,12 +6,12 @@ import utils.ds.ListNode;
  * 链表快排
  *
  * @author Peter Hua
- * @date 2021年04月22日00:48:53
+ * @date 2021年04月22日00:48:53p.next = pivot;
  */
 public class LinkQuickSort {
 
 	public static void main(String[] args) {
-		ListNode.printListNode(quickSort(ListNode.getList(new int[]{9, 8, 2, 4, 3, 1, 5, 10, 6, 7})));
+		ListNode.printListNode(quickSort(ListNode.getList(new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1})));
 
 	}
 
