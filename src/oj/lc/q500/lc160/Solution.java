@@ -1,6 +1,6 @@
 package oj.lc.q500.lc160;
 
-import utils.object.ListNode;
+import utils.ds.ListNode;
 
 public class Solution {
 	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {

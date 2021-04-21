@@ -1,8 +1,6 @@
 package oj.lc.q500.lc92;
 
-import utils.object.ListNode;
-
-import java.util.List;
+import utils.ds.ListNode;
 
 public class Solution {
 

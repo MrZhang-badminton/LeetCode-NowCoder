@@ -1,7 +1,7 @@
 package oj.lc.q500.lc109;
 
-import utils.object.ListNode;
-import utils.object.TreeNode;
+import utils.ds.ListNode;
+import utils.ds.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

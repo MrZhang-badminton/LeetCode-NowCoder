@@ -1,7 +1,7 @@
 package oj.temp;
 
 
-import utils.object.ListNode;
+import utils.ds.ListNode;
 
 public class Test2 {
 

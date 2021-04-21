@@ -1,6 +1,6 @@
 package oj.lc.q500.lc60;
 
-import utils.object.ListNode;
+import utils.ds.ListNode;
 
 /**
  * @date 2021年02月24日11:03:30

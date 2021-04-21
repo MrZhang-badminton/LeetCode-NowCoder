@@ -1,6 +1,6 @@
 package oj.lc.q500.lc199;
 
-import utils.object.TreeNode;
+import utils.ds.TreeNode;
 
 import java.util.*;
 

@@ -5,27 +5,28 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * @date 2021年04月21日13:09:06
+ * <p>
+ * 基于邻接矩阵的深度优先遍历与广度优先遍历
+ */
 public class Graph {
 	public static void main(String[] args) {
-		List<List<Integer>> lists = new ArrayList<>();
-		List<Integer> list0 = new ArrayList<>();
-		List<Integer> list1 = new ArrayList<>();
-		List<Integer> list2 = new ArrayList<>();
-		List<Integer> list3 = new ArrayList<>();
 
-		list0.add(1);
-		list0.add(3);
-		list1.add(2);
-
-		lists.add(list0);
-		lists.add(list1);
-		lists.add(list2);
-		lists.add(list3);
-
-		bfs(new int[][]{{0, 1, 0, 1},
+		dfs(new int[][]{{0, 1, 0, 1},
 				{0, 0, 1, 0},
 				{0, 0, 0, 0},
-				{0, 0, 0, 0}}, new boolean[4], lists, 0);
+				{0, 0, 0, 0}}, new boolean[4], 0);
+	}
+
+	public static List<Integer> getNeighbour(int[][] graph, int start) {
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < graph.length; i++) {
+			if (graph[start][i] != 0) {
+				list.add(i);
+			}
+		}
+		return list;
 	}
 
 	/**
@@ -35,36 +36,36 @@ public class Graph {
 	 * @param flag
 	 * @param start
 	 */
-	public static void dfs(int[][] graph, boolean[] flag, List<List<Integer>> lists, int start) {
+	public static void dfs(int[][] graph, boolean[] flag, int start) {
 		int n = graph.length;
 		System.out.println(start);
-		List<Integer> tempList = lists.get(start);
+		List<Integer> tempList = getNeighbour(graph, start);
 		for (int i : tempList) {
 			if (!flag[i]) {
 				flag[i] = true;
-				dfs(graph, flag, lists, i);
+				dfs(graph, flag, i);
 			}
 		}
 	}
 
 	/**
 	 * 广度优先遍历
+	 *
 	 * @param graph
 	 * @param flag
-	 * @param lists
 	 * @param start
 	 */
-	public static void bfs(int[][] graph, boolean[] flag, List<List<Integer>> lists, int start) {
+	public static void bfs(int[][] graph, boolean[] flag, int start) {
 		Queue<Integer> queue = new LinkedList<>();
 
 		queue.add(start);
-		while(!queue.isEmpty()){
+		while (!queue.isEmpty()) {
 			int v = queue.poll();
 			flag[v] = true;
 			System.out.println(v);
-			List<Integer> tempList = lists.get(v);
+			List<Integer> tempList = getNeighbour(graph, v);
 			for (int i : tempList) {
-				if(!flag[i]){
+				if (!flag[i]) {
 					queue.add(i);
 				}
 			}

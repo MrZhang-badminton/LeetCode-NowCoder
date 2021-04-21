@@ -1,4 +1,4 @@
-package utils.object;
+package utils.ds;
 
 public class ListNode {
 	public int val;

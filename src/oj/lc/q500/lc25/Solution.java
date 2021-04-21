@@ -1,9 +1,6 @@
 package oj.lc.q500.lc25;
 
-import com.sun.xml.internal.ws.api.model.CheckedException;
-import utils.object.ListNode;
-
-import java.util.List;
+import utils.ds.ListNode;
 
 /**
  * 每K个翻转链表

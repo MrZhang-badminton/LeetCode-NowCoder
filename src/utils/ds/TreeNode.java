@@ -1,4 +1,4 @@
-package utils.object;
+package utils.ds;
 
 import java.util.*;
 

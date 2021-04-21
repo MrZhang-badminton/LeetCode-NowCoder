@@ -1,6 +1,6 @@
 package oj.lc.q500.lc83;
 
-import utils.object.ListNode;
+import utils.ds.ListNode;
 
 public class Solution {
 	public static ListNode deleteDuplicates(ListNode head) {

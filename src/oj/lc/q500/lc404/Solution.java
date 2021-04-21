@@ -1,7 +1,6 @@
 package oj.lc.q500.lc404;
 
-import utils.object.ListNode;
-import utils.object.TreeNode;
+import utils.ds.TreeNode;
 
 public class Solution {
 	public static boolean judgeIsLeaf(TreeNode root) {

@@ -1,9 +1,13 @@
 package oj.temp;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Test {
 
 	/**
 	 * 大数相加字符串版本
+	 *
 	 * @param s
 	 * @param t
 	 * @return
@@ -35,13 +39,14 @@ public class Test {
 			res = num1 + num2 + plus;
 			plus = 0;
 
-			if(res >= 10) {
+			if (res >= 10) {
 				plus = 1;
 				res = res - 10;
 			}
 
 			sb.append(res);
-			i++;j++;
+			i++;
+			j++;
 		}
 
 		return sb.reverse().toString();

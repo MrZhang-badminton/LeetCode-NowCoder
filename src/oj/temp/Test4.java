@@ -1,6 +1,6 @@
 package oj.temp;
 
-import utils.object.TreeNode;
+import utils.ds.TreeNode;
 
 import java.util.*;
 

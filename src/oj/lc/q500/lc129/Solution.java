@@ -1,6 +1,6 @@
 package oj.lc.q500.lc129;
 
-import utils.object.TreeNode;
+import utils.ds.TreeNode;
 
 public class Solution {
 

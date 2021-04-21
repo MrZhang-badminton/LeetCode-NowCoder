@@ -1,6 +1,6 @@
 package oj.lc.q500.lc24;
 
-import utils.object.ListNode;
+import utils.ds.ListNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
