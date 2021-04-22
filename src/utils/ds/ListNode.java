@@ -3,13 +3,21 @@ package utils.ds;
 public class ListNode {
 	public int val;
 	public ListNode next = null;
-	public ListNode(){}
+
+	public ListNode() {
+	}
+
+	public ListNode(int val, ListNode next) {
+		this.val = val;
+		this.next = next;
+	}
+
 	public ListNode(int val) {
 		this.val = val;
 	}
 
 
-	public static ListNode getList(int[] nums){
+	public static ListNode getList(int[] nums) {
 		ListNode pHead = new ListNode(-1);
 		ListNode tail = pHead;
 
@@ -20,10 +28,10 @@ public class ListNode {
 		return pHead.next;
 	}
 
-	public static void printListNode(ListNode head){
+	public static void printListNode(ListNode head) {
 		System.out.print("[");
-		while(head != null){
-			if(head.next != null){
+		while (head != null) {
+			if (head.next != null) {
 				System.out.print(head.val + ", ");
 			} else {
 				System.out.print(head.val);
