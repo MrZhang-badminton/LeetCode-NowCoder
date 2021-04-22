@@ -1,9 +1,9 @@
-package oj.temp;
+package oj.others;
 
 
 import utils.ds.ListNode;
 
-public class Test2 {
+public class DeleteDuplicates {
 
 	public static ListNode deleteDuplicates(ListNode head) {
 		if (head == null) {

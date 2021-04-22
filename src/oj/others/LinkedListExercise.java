@@ -1,8 +1,8 @@
-package oj.temp;
+package oj.others;
 
-import utils.object.ListNode;
+import utils.ds.ListNode;
 
-public class ListTest {
+public class LinkedListExercise {
 
 
 	public static void main(String[] args) {
@@ -19,7 +19,10 @@ public class ListTest {
 			p = p.next;
 		}
 
-
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < 10; i++) {
+			sb.append(i);
+		}
 	}
 
 
