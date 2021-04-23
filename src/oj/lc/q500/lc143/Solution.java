@@ -1,4 +1,4 @@
-package oj.lc.lc143;
+package oj.lc.q500.lc143;
 
 import utils.ds.ListNode;
 
