@@ -4,23 +4,6 @@ import java.util.*;
 
 public class Solution {
 
-//	public static int findPairs(int[] nums, int k) {
-//		Set<Integer> set = new HashSet<>();
-//		for(int i : nums){
-//			set.add(i);
-//		}
-//
-//		int count = 0;
-//		for(int i : set){
-//			if(set.contains(i+k)){
-//				count++;
-//			}
-//		}
-//
-//		return count;
-//
-//	}
-
 	public static int findPairs(int[] nums, int k) {
 		Map<Integer, Integer> map = new HashMap<>();
 		for (int i : nums) {
