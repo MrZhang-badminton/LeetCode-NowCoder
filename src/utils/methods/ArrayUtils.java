@@ -15,6 +15,7 @@ public class ArrayUtils {
 			}
 		}
 		System.out.print("]");
+		System.out.println();
 	}
 
 	public static void main(String[] args) {

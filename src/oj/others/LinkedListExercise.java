@@ -6,28 +6,14 @@ public class LinkedListExercise {
 
 
 	public static void main(String[] args) {
-		ListNode n1 = new ListNode(9);
-		n1.next = new ListNode(3);
-		n1.next.next = new ListNode(7);
-
-		ListNode n2 = new ListNode(6);
-		n2.next = new ListNode(3);
-
-		ListNode p = addInList(n1, n2);
-		while (p != null) {
-			System.out.println(p.val);
-			p = p.next;
-		}
-
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < 10; i++) {
-			sb.append(i);
-		}
+		ListNode head = ListNode.getList(new int[]{1,2,3,4,5,6});
+		ListNode.printListNode(removeLastK(head,4));
 	}
 
 
 	/**
 	 * 两个链表生成相加链表
+	 *
 	 * @param head1
 	 * @param head2
 	 * @return
@@ -46,28 +32,29 @@ public class LinkedListExercise {
 			if (head1 != null) {
 				num1 = head1.val;
 			}
-			if(head2 != null) {
+			if (head2 != null) {
 				num2 = head2.val;
 			}
 			res = num1 + num2 + plus;
 			plus = 0;
-			if(res >= 10) {
+			if (res >= 10) {
 				plus = 1;
 				res = res - 10;
 			}
 			p = new ListNode(res);
 			p.next = pHead.next;
 			pHead.next = p;
-			if(head1 != null) {
+			if (head1 != null) {
 				head1 = head1.next;
 			}
-			if(head2 != null) {
+			if (head2 != null) {
 				head2 = head2.next;
 			}
 		}
 
 		return pHead.next;
 	}
+
 	public static ListNode reverse(ListNode head) {
 		if (head == null) {
 			return null;
@@ -85,6 +72,7 @@ public class LinkedListExercise {
 
 	/**
 	 * 逆置每k个结点
+	 *
 	 * @param head
 	 * @param k
 	 * @return
@@ -126,6 +114,7 @@ public class LinkedListExercise {
 
 	/**
 	 * 找到第一个相遇的节点
+	 *
 	 * @param pHead1
 	 * @param pHead2
 	 * @return
@@ -157,6 +146,47 @@ public class LinkedListExercise {
 			pHead2 = pHead2.next;
 		}
 		return pHead1;
+	}
+
+	/**
+	 * 删除倒数第k个结点，如果不存在返回null
+	 *
+	 * @param head
+	 * @param k
+	 * @return
+	 */
+	public static ListNode removeLastK(ListNode head, int k) {
+		if (k < 0) {
+			return null;
+		}
+		if (k == 0) {
+			return head;
+		}
+		ListNode pHead = new ListNode(-1, head);
+		ListNode slow = pHead, fast = pHead;
+		int count = 0;
+		for (int i = 0; i < k + 1 && fast != null; i++) {
+			fast = fast.next;
+			count++;
+		}
+		if (count - 1 < k) {
+			return null;
+		}
+		while (fast != null) {
+			fast = fast.next;
+			slow = slow.next;
+		}
+
+		slow.next = slow.next.next;
+
+		return pHead.next;
+	}
+
+	public static void printList(ListNode head) {
+		while (head != null) {
+			System.out.print(head.val + " ");
+			head = head.next;
+		}
 	}
 }
 
