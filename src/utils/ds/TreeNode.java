@@ -76,7 +76,8 @@ public class TreeNode {
 				ptrToRight = queue.size() != 0 ? queue.getLast() : null;
 			}
 		}
-		System.out.println("最后一行不算！");
+		System.out.println();
+//		System.out.println("最后一行不算！");
 	}
 
 	public static void main(String[] args) {
