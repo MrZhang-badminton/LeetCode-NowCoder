@@ -1,29 +1,44 @@
 package oj.lc.q500.lc15;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Solution {
-	private static final int target = 1;
 
-	public static int[] twoSum(int[] nums, int target) {
-		Map<Integer, Integer> map = new HashMap<>();
-		int[] res = new int[2];
-
-		for(int i = 0; i < nums.length; i++){
-			if(map.containsKey(target - nums[i])){
-				res[0] = map.get(target - nums[i]);
-				res[1] = i;
-				break;
+	public static List<List<Integer>> threeSum(int[] nums) {
+		int n = nums.length;
+		Arrays.sort(nums);
+		List<List<Integer>> retList = new ArrayList<>();
+		for (int i = 0; i < n - 2; i++) {
+			if (i > 0 && nums[i] == nums[i - 1]) {
+				continue;
 			}
-			map.put(nums[i],i);
+			int k = n - 1;
+			int target = -nums[i];
+			for (int j = i + 1; j < n; j++) {
+				if(j > i+1 && nums[j] == nums[j-1]){
+					continue;
+				}
+				while(j < k && nums[j] + nums[k] > target){
+					k--;
+				}
+				if(j == k){
+					break;
+				}
+				if(nums[j] + nums[k] == target){
+					List<Integer> list = new ArrayList<>();
+					list.add(nums[i]);
+					list.add(nums[j]);
+					list.add(nums[k]);
+					retList.add(list);
+				}
+			}
 		}
-		return res;
+		return retList;
 	}
+
 	public static void main(String[] args) {
-		int[] nums = new int[]{-1,0,1,2,-1,-4};
-		int[] result = twoSum(nums, target);
-		for (int i = 0; i < 2; i++){
-			System.out.println(result[i]);
-		}
+		System.out.println(threeSum(new int[]{0}));
 	}
 }
