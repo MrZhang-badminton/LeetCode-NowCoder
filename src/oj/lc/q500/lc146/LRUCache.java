@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRUCache {
+	/**
+	 * 双链表
+	 */
 	private class LNode {
 		private int key;
 		private int value;
@@ -19,7 +22,13 @@ public class LRUCache {
 		}
 	}
 
+	/**
+	 * 总容量
+	 */
 	private int capacity;
+	/**
+	 * 当前数量
+	 */
 	private int size;
 	private Map<Integer, LNode> map = new HashMap<>();
 	private LNode head, tail;
@@ -38,8 +47,8 @@ public class LRUCache {
 		if(node == null){
 			return -1;
 		}
-		removeNode(node);
-		addToHead(node);
+
+		moveToHead(node);
 		return node.value;
 	}
 
