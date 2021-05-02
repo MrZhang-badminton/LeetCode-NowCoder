@@ -56,5 +56,11 @@ public class Solution {
 				{1,4},{4,5}
 		});
 		ArrayUtils.printArray(matrix);
+
+
+
+		List<Integer> list = new ArrayList<>();
+		list.add(123);
+		System.out.println(list.get(0));
 	}
 }
