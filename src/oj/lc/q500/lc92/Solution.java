@@ -5,50 +5,38 @@ import utils.ds.ListNode;
 public class Solution {
 
 	/**
-	 * 时间复杂度O(n)、空间复杂度O(1)
-	 * 遍历一遍
+	 * 定位 -> 前后合并 -> 将目标字符串，在对应地方头插入链表
 	 *
 	 * @param head
-	 * @param m
-	 * @param n
+	 * @param left
+	 * @param right
 	 * @return
 	 */
-	public static ListNode reverseBetween(ListNode head, int m, int n) {
-		if (head == null) {
-			return null;
+	public static ListNode reverseBetween2(ListNode head, int left, int right) {
+		ListNode pHead = new ListNode(-1);
+		pHead.next = head;
+		ListNode l = pHead, e = pHead;
+		for (int i = 0; i < left - 1; i++) {
+			l = l.next;
+		}
+		for (int i = 0; i < right; i++) {
+			e = e.next;
 		}
 
-		ListNode pre = null, cur = head;
-		while (m > 1) {
-			pre = cur;
-			cur = cur.next;
-			m--;
-			n--;
+		ListNode cur = l.next;
+		l.next = e.next;
+		e.next = null;
+		while (cur != null) {
+			ListNode next = cur.next;
+			cur.next = l.next;
+			l.next = cur;
+			cur = next;
 		}
-
-		ListNode ptr = null, con = pre, tail = cur;
-
-		while (n > 0) {
-			ptr = cur.next;
-			cur.next = pre;
-			pre = cur;
-			cur = ptr;
-			n--;
-		}
-		if (con != null) {
-			con.next = pre;
-
-		} else {
-			head = pre;
-		}
-
-		tail.next = cur;
-
-		return head;
+		return pHead.next;
 	}
 
 
 	public static void main(String[] args) {
-		ListNode.printListNode(reverseBetween(ListNode.getList(new int[]{1, 2, 3, 4, 5}), 1, 4));
+		ListNode.printListNode(reverseBetween2(ListNode.getList(new int[]{1, 2, 3, 4, 5}), 1, 4));
 	}
 }
