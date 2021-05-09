@@ -2,6 +2,43 @@ package oj.others;
 
 public class StringsExercise {
 
+	public static void main(String[] args) {
+		String s1 = "abcbbca", s2 = "bbc";
+		System.out.println(kmp(s2, s1));
+	}
+
+
+	/**
+	 * KMP字符串匹配算法，简化版本
+	 *
+	 * @param pat
+	 * @param txt
+	 * @return
+	 */
+	public static int kmp(String txt, String pat) {
+		int pLen = pat.length(), tLen = txt.length();
+		int[][] dp = new int[pLen][256];
+		dp[0][pat.charAt(0)] = 1;
+		int x = 0;
+
+		for (int i = 1; i < pLen; i++) {
+			for (int j = 0; j < 256; j++) {
+				dp[i][j] = dp[x][j];
+			}
+			dp[i][pat.charAt(i)] = i + 1;
+			x = dp[x][pat.charAt(i)];
+		}
+
+		int j = 0;
+		for (int i = 0; i < tLen; i++) {
+			j = dp[j][txt.charAt(i)];
+			if (j == pLen) {
+				return i - pLen + 1;
+			}
+		}
+		return -1;
+	}
+
 	/**
 	 * 是否是回文数
 	 *
@@ -107,13 +144,4 @@ public class StringsExercise {
 		return sb.reverse().toString();
 	}
 
-
-	public static void main(String[] args) {
-		String[] strs = new String[]{"abca", "abc", "abca", "abc", "abcc"};
-		System.out.println(longestCommonPrefix(strs));
-		System.out.println(isPalindrome("aba"));
-		String s1 = "1";
-		String s2 = "99";
-		System.out.println(solve(s1, s2));
-	}
 }
