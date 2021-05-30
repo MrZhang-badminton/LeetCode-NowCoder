@@ -1,70 +1,67 @@
 package oj.lc.q500.lc71;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Deque;
+import java.util.LinkedList;
 
-/**
- * 最小覆盖子串
- * 还有优化版本的有时间记得完成
- * @date 2021年03月12日17:44:51
- */
 public class Solution {
 
-	/**
-	 * 经典滑动窗口
-	 * @param s
-	 * @param t
-	 * @return
-	 */
-	public static String minWindow(String s, String t) {
-		if(s.length() < t.length()){
-			return "";
-		}
-		int n = s.length();
-
-		Map<Character, Integer> map = new HashMap<>();
-		for (int i = 0; i < t.length(); i++) {
-			map.put(t.charAt(i), map.getOrDefault(t.charAt(i), 0) + 1);
-		}
-
-		int right = 0, len = t.length();
+	public static String simplifyPath(String path) {
 		StringBuilder sb = new StringBuilder();
-		String ans = "";
-		int ansLen = Integer.MAX_VALUE;
-
-
-		for (int i = 0; i < n; i++) {
-			if (i != 0) {
-				char ch = s.charAt(i-1);
-				if(map.containsKey(ch)){
-					map.put(ch,map.get(ch)+1);
-					if(map.get(ch)>0){
-						len++;
-					}
-				}
-				sb.deleteCharAt(0);
-			}
-			while (right < n && len > 0) {
-				char ch = s.charAt(right);
+		Deque<String> queue = new LinkedList<>();
+		path = path + "/";
+		for (int i = 1; i < path.length(); i++) {
+			char ch = path.charAt(i);
+			if (ch != '/') {
 				sb.append(ch);
-				if (map.containsKey(ch)) {
-					map.put(ch, map.get(ch) - 1);
-					if(map.get(ch) >= 0){
-						len--;
-					}
-				}
-				right++;
+				continue;
 			}
-			if(len == 0 && sb.length() < ansLen){
-				ans = sb.toString();
-				ansLen = sb.length();
+			if (sb.toString().equals("..")) {
+				if (!queue.isEmpty()) {
+					queue.removeLast();
+				}
+			} else if (sb.toString().equals(".") || sb.toString().equals("")) {
+
+			} else {
+				queue.addLast(sb.toString());
+			}
+			sb = new StringBuilder();
+		}
+		sb = new StringBuilder();
+		if (!queue.isEmpty()) {
+			for (String s : queue) {
+				sb.append("/" + s);
+			}
+		} else {
+			sb.append("/");
+		}
+		return sb.toString();
+	}
+
+	public static String simplifyPath2(String path) {
+		path = path + "/";
+		String[] strings = path.split("/");
+		Deque<String> deque = new LinkedList<>();
+		for (String s : strings) {
+			if (!s.equals(".") && !s.equals("..") && !s.equals("")) {
+				deque.addLast(s);
+			} else if (s.equals("..")) {
+				if (!deque.isEmpty()) {
+					deque.removeLast();
+				}
 			}
 		}
-		return ans;
-
+		StringBuilder sb = new StringBuilder();
+		if (deque.isEmpty()) {
+			sb.append("/");
+		}else {
+			for(String s : deque){
+				sb.append("/" + s);
+			}
+		}
+		return sb.toString();
 	}
 
 	public static void main(String[] args) {
-		System.out.println(minWindow("aa", "aa"));
+		System.out.println(simplifyPath2("/a//b////c/d//././/.."));
 	}
 }
