@@ -1,4 +1,4 @@
-package oj.others;
+package basealogrithm.linkedlist;
 
 import utils.ds.ListNode;
 

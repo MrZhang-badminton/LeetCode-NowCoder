@@ -1,4 +1,4 @@
-package oj.others;
+package basealogrithm.trees;
 
 import utils.ds.TreeNode;
 
