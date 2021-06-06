@@ -9,3 +9,6 @@ out
 
 #忽略mac隐藏文件
 .DS_Store
+
+#忽略temp文件夹下的文件
+temp/
