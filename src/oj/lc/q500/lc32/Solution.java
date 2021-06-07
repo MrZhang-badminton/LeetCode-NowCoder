@@ -80,15 +80,15 @@ public class Solution {
 		}
 		left = 0;
 		right = 0;
-		for (int i = n-1; i >=0 ; i--) {
-			if(s.charAt(i) == ')'){
+		for (int i = n - 1; i >= 0; i--) {
+			if (s.charAt(i) == ')') {
 				right++;
-			}else {
+			} else {
 				left++;
 			}
-			if(left == right){
-				max = Math.max(max,left*2);
-			}else if(left > right){
+			if (left == right) {
+				max = Math.max(max, left * 2);
+			} else if (left > right) {
 				left = 0;
 				right = 0;
 			}
