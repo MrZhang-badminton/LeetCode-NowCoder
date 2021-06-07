@@ -1,4 +1,4 @@
-package oj.lc.q1000.q922;
+package oj.lc.q1000.lc922;
 
 import java.util.*;
 
