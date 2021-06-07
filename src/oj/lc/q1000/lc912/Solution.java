@@ -1,4 +1,4 @@
-package oj.lc.q500.lc912;
+package oj.lc.q1000.lc912;
 
 public class Solution {
 	public static int[] sortArray(int[] nums) {
