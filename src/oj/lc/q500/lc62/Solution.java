@@ -1,35 +1,21 @@
 package oj.lc.q500.lc62;
 
-import utils.ds.ListNode;
-
-/**
- * 旋转链表
- *
- * @date 2021年02月27日15:43:38
- */
 public class Solution {
-	public static ListNode rotateRight(ListNode head, int k) {
-		if (head == null) {
-			return null;
+	public static int uniquePaths(int m, int n) {
+		int[][] dp = new int[m + 1][n + 1];
+		dp[1][1] = 1;
+		for (int i = 1; i <= m; i++) {
+			for (int j = 1; j <= n; j++) {
+				if(i == 1 && j == 1){
+					continue;
+				}
+				dp[i][j] = dp[i-1][j] + dp[i][j-1];
+			}
 		}
-		int count = 1;
-		ListNode ptr = head;
-		while (ptr.next != null) {
-			count++;
-			ptr = ptr.next;
-		}
-		k = k % count;
-		ptr.next = head;
-		for (int i = 0; i < count - k; i++) {
-			ptr = ptr.next;
-		}
-		head = ptr.next;
-		ptr.next = null;
-		return head;
+		return dp[m][n];
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{0, 1, 2});
-		ListNode.printListNode(rotateRight(null, 0));
+		System.out.println(uniquePaths(3, 7));
 	}
 }
