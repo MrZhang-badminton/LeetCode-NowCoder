@@ -1,6 +1,6 @@
 package utils.ds;
 
-import java.util.*;
+import utils.ds.reference.TreeOperation;
 
 public class TreeNode {
 	public int val = 0;
@@ -47,69 +47,63 @@ public class TreeNode {
 		return nodes[0];
 	}
 
-	/**
-	 * 按照层次打印树
-	 *
-	 * @param root
-	 */
-	public static void printTree(TreeNode root) {
-		if (root == null) {
-			return;
-		}
-		Deque<TreeNode> queue = new ArrayDeque<>();
-		TreeNode ptrToRight = root;
-		queue.add(root);
-		int treeHeight = getTreeHeight(root);
+//	/**
+//	 * 按照层次打印树
+//	 *
+//	 * @param root
+//	 */
+//	public static void printTree(TreeNode root) {
+//		if (root == null) {
+//			return;
+//		}
+//		Deque<TreeNode> queue = new ArrayDeque<>();
+//		TreeNode ptrToRight = root;
+//		queue.add(root);
+//		int treeHeight = getTreeHeight(root);
+//
+//		/**
+//		 * 当前树的高度，因为根节点还没有出队
+//		 * 默认为0
+//		 */
+//		int h = 0;
+//
+//		System.out.println(root.val);
+//		while (!queue.isEmpty()) {
+//			TreeNode ptr = queue.poll();
+//			if (h + 1 != treeHeight) {
+//				System.out.print(ptr.left == null ? "# " : (ptr.left.val + " "));
+//				System.out.print(ptr.right == null ? "# " : (ptr.right.val + " "));
+//			}
+//			if (ptr.left != null) {
+//				queue.add(ptr.left);
+//			}
+//			if (ptr.right != null) {
+//				queue.add(ptr.right);
+//			}
+//			if (h + 1 != treeHeight && ptrToRight == ptr) {
+//				System.out.println();
+//				h++;
+//				ptrToRight = queue.size() != 0 ? queue.getLast() : null;
+//			}
+//		}
+//		System.out.println();
+//	}
+//
+//	private static int getTreeHeight(TreeNode root) {
+//		return root == null ? 0 : (1 + Math.max(getTreeHeight(root.left), getTreeHeight(root.right)));
+//	}
 
-		/**
-		 * 当前树的高度，因为根节点还没有出队
-		 * 默认为0
-		 */
-		int h = 0;
 
-		System.out.println(root.val);
-		while (!queue.isEmpty()) {
-			TreeNode ptr = queue.poll();
-			if (h + 1 != treeHeight) {
-				System.out.print(ptr.left == null ? "# " : (ptr.left.val + " "));
-				System.out.print(ptr.right == null ? "# " : (ptr.right.val + " "));
-			}
-			if (ptr.left != null) {
-				queue.add(ptr.left);
-			}
-			if (ptr.right != null) {
-				queue.add(ptr.right);
-			}
-			if (h + 1 != treeHeight && ptrToRight == ptr) {
-				System.out.println();
-				h++;
-				ptrToRight = queue.size() != 0 ? queue.getLast() : null;
-			}
-		}
-		System.out.println();
+	public static void printTree(TreeNode root){
+		TreeOperation.show(root);
 	}
 
-
-	private static int getTreeHeight(TreeNode root) {
-		int sum = getSumOfNodes(root);
-		int h = 1;
-		while ((int) Math.pow(2, h) - 1 < sum) {
-			h++;
-		}
-		return h;
-	}
-
-	private static int getSumOfNodes(TreeNode root) {
-		if (root == null) {
-			return 0;
-		}
-		return getSumOfNodes(root.left) + getSumOfNodes(root.right) + 1;
-	}
 
 	public static void main(String[] args) {
 		TreeNode root = TreeNode.createTree(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8});
 
 		TreeNode.printTree(root);
+
 
 //		System.out.println(getTreeHeight(root));
 	}
