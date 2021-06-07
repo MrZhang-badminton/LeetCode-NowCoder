@@ -59,32 +59,59 @@ public class TreeNode {
 		Deque<TreeNode> queue = new ArrayDeque<>();
 		TreeNode ptrToRight = root;
 		queue.add(root);
-		System.out.println(root.val);
+		int treeHeight = getTreeHeight(root);
 
+		/**
+		 * 当前树的高度，因为根节点还没有出队
+		 * 默认为0
+		 */
+		int h = 0;
+
+		System.out.println(root.val);
 		while (!queue.isEmpty()) {
 			TreeNode ptr = queue.poll();
-			System.out.print(ptr.left == null ? "# " : (ptr.left.val + " "));
-			System.out.print(ptr.right == null ? "# " : (ptr.right.val + " "));
+			if (h + 1 != treeHeight) {
+				System.out.print(ptr.left == null ? "# " : (ptr.left.val + " "));
+				System.out.print(ptr.right == null ? "# " : (ptr.right.val + " "));
+			}
 			if (ptr.left != null) {
 				queue.add(ptr.left);
 			}
 			if (ptr.right != null) {
 				queue.add(ptr.right);
 			}
-			if (ptrToRight == ptr) {
+			if (h + 1 != treeHeight && ptrToRight == ptr) {
 				System.out.println();
+				h++;
 				ptrToRight = queue.size() != 0 ? queue.getLast() : null;
 			}
 		}
 		System.out.println();
-//		System.out.println("最后一行不算！");
+	}
+
+
+	private static int getTreeHeight(TreeNode root) {
+		int sum = getSumOfNodes(root);
+		int h = 1;
+		while ((int) Math.pow(2, h) - 1 < sum) {
+			h++;
+		}
+		return h;
+	}
+
+	private static int getSumOfNodes(TreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		return getSumOfNodes(root.left) + getSumOfNodes(root.right) + 1;
 	}
 
 	public static void main(String[] args) {
 		TreeNode root = TreeNode.createTree(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8});
-		System.out.println(root);
 
 		TreeNode.printTree(root);
+
+//		System.out.println(getTreeHeight(root));
 	}
 
 }
