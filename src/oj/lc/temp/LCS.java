@@ -1,4 +1,4 @@
-package oj;
+package oj.lc.temp;
 
 public class LCS {
 
