@@ -12,3 +12,6 @@ out
 
 #忽略temp文件夹下的文件
 temp/
+
+#忽略Test.java
+Test.java
