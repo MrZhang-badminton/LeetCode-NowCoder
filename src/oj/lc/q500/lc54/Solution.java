@@ -3,6 +3,7 @@ package oj.lc.q500.lc54;
 import utils.methods.ArrayUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class Solution {
@@ -43,6 +44,56 @@ class Solution {
 	}
 
 	/**
+	 * 变种
+	 * 第一圈顺时针
+	 * 第二圈逆时针
+	 * 第三圈顺指针
+	 * 以此类推
+	 *
+	 * @param matrix
+	 * @return
+	 */
+	public static List<Integer> specialSpiralOrder(int[][] matrix) {
+		List<Integer> list = new ArrayList<>();
+		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+			return list;
+		}
+		int rows = matrix.length, cols = matrix[0].length;
+		int left = 0, top = 0, down = rows - 1, right = cols - 1;
+		int count = 0;
+		while (left <= right && top <= down) {
+			List<Integer> tList = new ArrayList<>();
+			for (int i = left; i < right; i++) {
+				tList.add(matrix[top][i]);
+			}
+			for (int i = top; i < down; i++) {
+				tList.add(matrix[i][right]);
+			}
+			for (int i = right; i > left; i--) {
+				tList.add(matrix[down][i]);
+			}
+			for (int i = down; i > top; i--) {
+				tList.add(matrix[i][left]);
+			}
+			if (count % 2 == 1) {
+				int temp = tList.get(0);
+				tList.remove(0);
+				tList.add(temp);
+				Collections.reverse(tList);
+			}
+			list.addAll(tList);
+			left++;
+			top++;
+			right--;
+			down--;
+			count++;
+		}
+		return list;
+
+	}
+
+
+	/**
 	 * 生成螺旋矩阵
 	 * @param n
 	 * @return
@@ -78,9 +129,13 @@ class Solution {
 	public static void main(String[] args) {
 
 		ArrayUtils.printArray(generateMatrix(3));
-
-
-		int[][] mar = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+		int[][] mar = new int[][]{
+				{1, 2, 3, 4},
+				{5, 6, 7, 8},
+				{9, 16, 3, 1},
+				{17, 10, 11, 12}};
 		System.out.println(spiralOrder(mar));
+		System.out.println(specialSpiralOrder(mar));
+
 	}
 }
