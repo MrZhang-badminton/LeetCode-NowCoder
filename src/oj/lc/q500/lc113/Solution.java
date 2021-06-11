@@ -19,7 +19,6 @@ public class Solution {
 		}
 		inOrder(root.left, sum, targetSum, list, ansList);
 		inOrder(root.right, sum, targetSum, list, ansList);
-		sum -= root.val;
 		list.remove(list.size() - 1);
 
 	}
@@ -33,7 +32,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{5,4,8,11,-1,13,4,7,2,-1,-1,-1,-1,5,1});
-		System.out.println(pathSum(root,22));
+		TreeNode root = TreeNode.createTree(new int[]{5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, -1, -1, 5, 1});
+		System.out.println(pathSum(root, 22));
 	}
 }

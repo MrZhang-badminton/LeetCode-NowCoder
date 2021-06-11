@@ -1,39 +1,17 @@
 package oj.lc.q500.lc54;
 
+import utils.methods.ArrayUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
 
-	public static int[][] generateMatrix(int n) {
-		int[][] ans = new int[n][n];
-		int num = 1;
-		int left = 0, right = n - 1, top = 0, bottom = n - 1;
-		while (left <= right && top <= bottom) {
-			for (int col = left; col <= right; col++) {
-				ans[top][col] = num++;
-			}
-
-			for (int row = top + 1; row <= bottom; row++) {
-				ans[row][right] = num++;
-			}
-			if (left < right && top < bottom) {
-				for (int col = right - 1; col > left; col--) {
-					ans[bottom][col] = num++;
-				}
-				for (int row = bottom; row > top; row--) {
-					ans[row][left] = num++;
-				}
-			}
-			left++;
-			right--;
-			top++;
-			bottom--;
-		}
-		return ans;
-	}
-
-
+	/**
+	 * 输出顺时针螺旋顺序
+	 * @param matrix
+	 * @return
+	 */
 	public static List<Integer> spiralOrder(int[][] matrix) {
 		List<Integer> list = new ArrayList<>();
 		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -64,10 +42,42 @@ class Solution {
 		return list;
 	}
 
+	/**
+	 * 生成螺旋矩阵
+	 * @param n
+	 * @return
+	 */
+	public static int[][] generateMatrix(int n) {
+		int[][] ans = new int[n][n];
+		int num = 1;
+		int left = 0, right = n - 1, top = 0, bottom = n - 1;
+		while (left <= right && top <= bottom) {
+			for (int col = left; col <= right; col++) {
+				ans[top][col] = num++;
+			}
+
+			for (int row = top + 1; row <= bottom; row++) {
+				ans[row][right] = num++;
+			}
+			if (left < right && top < bottom) {
+				for (int col = right - 1; col > left; col--) {
+					ans[bottom][col] = num++;
+				}
+				for (int row = bottom; row > top; row--) {
+					ans[row][left] = num++;
+				}
+			}
+			left++;
+			right--;
+			top++;
+			bottom--;
+		}
+		return ans;
+	}
 
 	public static void main(String[] args) {
 
-		System.out.println(generateMatrix(3));
+		ArrayUtils.printArray(generateMatrix(3));
 
 
 		int[][] mar = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};

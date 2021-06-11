@@ -10,9 +10,10 @@ import utils.ds.TreeNode;
  */
 public class Solution {
 
-	private static int maxSum = Integer.MIN_VALUE;
+	private static int maxSum;
 
 	public static int maxPathSum(TreeNode root) {
+		maxSum = Integer.MIN_VALUE;
 		postOrder(root);
 		return maxSum;
 	}

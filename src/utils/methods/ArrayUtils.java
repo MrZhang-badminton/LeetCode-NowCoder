@@ -43,6 +43,7 @@ public class ArrayUtils {
 			System.out.println();
 		}
 		System.out.print("]");
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
