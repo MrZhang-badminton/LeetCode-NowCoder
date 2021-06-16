@@ -41,74 +41,6 @@ public class ExcesicesReview {
 		quick(nums, l + 1, right);
 	}
 
-	/**
-	 * 是否有环
-	 *
-	 * @param head
-	 * @return
-	 */
-	public static boolean isHasCycle(ListNode head) {
-		ListNode slow, fast;
-		slow = head;
-		fast = head;
-		while (fast != null) {
-			slow = slow.next;
-			fast = fast.next;
-			if (fast != null) {
-				fast = fast.next;
-			}
-			if (fast == slow) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * 找到环的入口
-	 *
-	 * @param head
-	 * @return
-	 */
-	public static ListNode findEntrance(ListNode head) {
-		ListNode slow, fast;
-		slow = head;
-		fast = head;
-		while (fast != null) {
-			slow = slow.next;
-			fast = fast.next;
-			if (fast != null) {
-				fast = fast.next;
-			}
-			if (fast == slow) {
-				break;
-			}
-		}
-		fast = head;
-		while (fast != slow) {
-			fast = fast.next;
-			slow = slow.next;
-		}
-		return slow;
-	}
-
-	/**
-	 * 反转链表
-	 *
-	 * @param head
-	 * @return
-	 */
-	public static ListNode reverseList(ListNode head) {
-		ListNode pHead = new ListNode(-1);
-		while (head != null) {
-			ListNode p = head.next;
-			head.next = pHead.next;
-			pHead.next = head;
-			head = p;
-		}
-		return pHead.next;
-	}
-
 
 	/**
 	 * 二分查找
@@ -127,113 +59,6 @@ public class ExcesicesReview {
 			}
 		}
 		return l;
-	}
-
-	/**
-	 * 重排序
-	 * 1->2->3->4->5
-	 * <p>
-	 * 1->5->2->4->3
-	 *
-	 * @param head
-	 * @return
-	 */
-	public static ListNode sortList(ListNode head) {
-		ListNode pHead = new ListNode(-1);
-		pHead.next = head;
-		ListNode slow = pHead, fast = pHead;
-		while (fast != null) {
-			slow = slow.next;
-			fast = fast.next;
-			if (fast != null) {
-				fast = fast.next;
-			}
-		}
-		ListNode head2 = slow.next;
-		slow.next = null;
-
-		head2 = reverseList(head2);
-		pHead.next = null;
-		ListNode tail = pHead;
-		while (head != null && head2 != null) {
-			ListNode next = head.next;
-			head.next = null;
-			tail.next = head;
-			tail = tail.next;
-			head = next;
-
-			next = head2.next;
-			head2.next = null;
-			tail.next = head2;
-			tail = tail.next;
-			head2 = next;
-		}
-		if (head != null) {
-			tail.next = head;
-		}
-		if (head2 != null) {
-			tail.next = head2;
-		}
-
-		return pHead.next;
-	}
-
-	/**
-	 * K个一组翻转链表
-	 *
-	 * @param head
-	 * @param k
-	 * @return
-	 */
-	public static ListNode reverseK(ListNode head, int k) {
-		ListNode pHead = new ListNode(-1);
-		pHead.next = head;
-		ListNode p = pHead;
-		int count = 0;
-		while (count < k && p.next != null) {
-			count++;
-			p = p.next;
-		}
-		if (count < k) {
-			return head;
-		}
-		ListNode othersNode = p.next;
-		p.next = null;
-		ListNode tail = pHead.next;
-		pHead.next = reverseList(pHead.next);
-		tail.next = reverseK(othersNode, k);
-		return pHead.next;
-	}
-
-
-	private static TreeNode ansNode;
-
-	/**
-	 * 寻找最新公共最先
-	 *
-	 * @param root
-	 * @param p
-	 * @param q
-	 * @return
-	 */
-	public static TreeNode findCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-		ansNode = null;
-		dfs(root, p, q);
-		return ansNode;
-	}
-
-	public static boolean dfs(TreeNode root, TreeNode p, TreeNode q) {
-		if (root == null) {
-			return false;
-		}
-		boolean left = dfs(root.left, p, q);
-		boolean right = dfs(root.right, p, q);
-
-		if ((left && right) || ((root == p || root == q) && (left || right))) {
-			ansNode = root;
-		}
-
-		return left || right || root == q || root == p;
 	}
 
 
@@ -299,54 +124,6 @@ public class ExcesicesReview {
 	}
 
 	/**
-	 * 根据前中序列，建立二叉树
-	 *
-	 * @param pre
-	 * @param in
-	 * @return
-	 */
-	public static TreeNode buildTree(int[] pre, int[] in) {
-		return build(pre, 0, pre.length - 1, in, 0, pre.length - 1);
-
-	}
-
-	public static TreeNode build(int[] pre, int l1, int r1, int[] in, int l2, int r2) {
-		if (l1 > r1) {
-			return null;
-		}
-		int val = pre[l1];
-		TreeNode root = new TreeNode(val);
-		int i = l2;
-		for (; i <= r2; i++) {
-			if (in[i] == val) {
-				break;
-			}
-		}
-		int len = i - l2;
-
-		root.left = build(pre, l1 + 1, l1 + len, in, l2, i - 1);
-		root.right = build(pre, l1 + len + 1, r1, in, i + 1, r2);
-		return root;
-
-	}
-
-	/**
-	 * 树的镜像
-	 *
-	 * @param root
-	 * @return
-	 */
-	public static TreeNode mirrorTree(TreeNode root) {
-		if (root == null) {
-			return null;
-		}
-		TreeNode tNode = root.left;
-		root.left = mirrorTree(root.right);
-		root.right = mirrorTree(tNode);
-		return root;
-	}
-
-	/**
 	 * 无重复最长子串
 	 *
 	 * @param s
@@ -369,25 +146,6 @@ public class ExcesicesReview {
 		return ans;
 	}
 
-	/**
-	 * random7()实现random10()
-	 *
-	 * @return
-	 */
-	public static int random10() {
-		int row, col, index;
-		do {
-			row = random7();
-			col = random7();
-			index = (random7() - 1) * 7 + col;
-		} while (index > 40);
-		return index % 10 + 1;
-	}
-
-	public static int random7() {
-		return 1;
-	}
-
 	public static int nthUglyNumber(int n) {
 		int[] dp = new int[n + 1];
 		dp[1] = 1;
@@ -408,41 +166,6 @@ public class ExcesicesReview {
 			}
 		}
 		return dp[n];
-	}
-
-	public static void preOrder(TreeNode root) {
-		Deque<TreeNode> stack = new LinkedList<>();
-		TreeNode p = root;
-		while (p != null || !stack.isEmpty()) {
-			if (p != null) {
-				System.out.println(p.val);
-				stack.push(p);
-				p = p.left;
-			} else {
-				p = stack.pop().right;
-			}
-		}
-	}
-
-
-	public static void postOrder(TreeNode root) {
-		Deque<TreeNode> stack = new LinkedList<>();
-		TreeNode p = root, preVisited = null;
-		while (p != null || !stack.isEmpty()) {
-			if (p != null) {
-				stack.push(p);
-				p = p.left;
-			} else {
-				TreeNode tNode = stack.peek();
-				if (tNode.right == null || tNode.right == preVisited) {
-					System.out.println(tNode.val);
-					preVisited = tNode;
-					stack.pop();
-				} else {
-					p = tNode.right;
-				}
-			}
-		}
 	}
 
 	public static String longestHuiwen(String s) {
@@ -477,43 +200,179 @@ public class ExcesicesReview {
 		return ans;
 	}
 
-	public static void main(String[] args) {
-//		int[] nums = new int[]{4,3,76,4,1,89,5};
-//		ArrayUtils.printArray(quickSort(nums));
-
-//		ListNode head = ListNode.createList(new int[]{1, 2, 3, 4, 5});
-//		head.next.next.next = head.next;
-//		System.out.println(findEntrance(head).val);
-
-//		ListNode.printListNode(reverseK(head, 2));
-
-//		System.out.println(findPeekElement(new int[]{1, 2, 3, 2, 1, 4, 3}));
-
-//
-//		TreeNode root = TreeNode.createTree(new int[]{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4, -1, -1, -1, -1});
-//		TreeNode p = root.left, q = root.left.right.right;
-//		System.out.println(findCommonAncestor(root, p, q).val);
-
-//		System.out.println(twoSum(new int[]{3, 2, 4}, 6));
-//		System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}, 0));
-
-//		TreeNode root = buildTree(new int[]{1, 2, 4, 5, 3}, new int[]{4, 2, 5, 1, 3});
-//		TreeNode.printTree(root);
-
-//		TreeNode root = TreeNode.createTree(new int[]{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4, -1, -1, -1, -1});
-//		TreeNode.printTree(root);
-//		TreeNode.printTree(mirrorTree(root));
-
-
-//		System.out.println(lengthOfLongestSubstring("abcabcbb"));
-
-//		System.out.println(nthUglyNumber(10));
-
-
-//		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5});
-//		postOrder(root);
-
-		System.out.println(longestHuiwen("12321444444"));
+	public static int findK(int[] nums, int k) {
+		return find(nums, 0, nums.length - 1, k - 1);
 	}
+
+	public static int find(int[] nums, int left, int right, int k) {
+		if (left > right) {
+			return -1;
+		}
+		int l = left, r = right;
+		int pivot = nums[left];
+		while (l < r) {
+			while (l < r && nums[r] >= pivot) r--;
+			nums[l] = nums[r];
+			while (l < r && nums[l] < pivot) l++;
+			nums[r] = nums[l];
+		}
+		nums[l] = pivot;
+		if (l == k) {
+			return pivot;
+		} else if (l < k) {
+			return find(nums, l + 1, right, k);
+		} else {
+			return find(nums, left, l - 1, k);
+		}
+	}
+
+	public static List<List<Integer>> printZTree(TreeNode root) {
+		List<List<Integer>> ansList = new ArrayList<>();
+		List<Integer> list = new ArrayList<>();
+		TreeNode pre = root;
+		Deque<TreeNode> deque = new LinkedList<>();
+		deque.offer(root);
+		while (!deque.isEmpty()) {
+			TreeNode p = deque.removeFirst();
+			list.add(p.val);
+			if (p.left != null) {
+				deque.addLast(p.left);
+			}
+			if (p.right != null) {
+				deque.addLast(p.right);
+			}
+			if (p == pre) {
+				ansList.add(list);
+				if (!deque.isEmpty()) {
+					list = new ArrayList<>();
+					pre = deque.getLast();
+				}
+			}
+		}
+		return ansList;
+	}
+
+	public static void printMatrixSpecial(int[][] matrix) {
+		int left = 0, top = 0, right = matrix[0].length - 1, down = matrix.length - 1;
+		List<Integer> ansList = new ArrayList<>();
+		int count = 0;
+		while (left <= right || top <= down) {
+			List<Integer> list = new ArrayList<>();
+			for (int i = left; i < right; i++) {
+				list.add(matrix[top][i]);
+			}
+			for (int i = top; i < down; i++) {
+				list.add(matrix[i][right]);
+			}
+			for (int i = right; i > left; i--) {
+				list.add(matrix[down][i]);
+			}
+			for (int i = down; i > top; i--) {
+				list.add(matrix[i][left]);
+			}
+			if ((count & 1) == 1) {
+				int temp = list.remove(0);
+				list.add(temp);
+				Collections.reverse(list);
+			}
+			left++;
+			top++;
+			right--;
+			down--;
+			ansList.addAll(list);
+			count++;
+		}
+		System.out.println(ansList);
+	}
+
+	//	public static void main(String[] args) {
+//		int[][] matrix = new int[][]{
+//				{1, 2, 3, 4},
+//				{5, 6, 7, 8},
+//				{9, 10, 11, 12},
+//				{13, 14, 15, 16}
+//		};
+//		printMatrixSpecial(matrix);
+//	}
+
+	public static TreeNode findCommonAncestor(TreeNode root, TreeNode node1, TreeNode node2) {
+		TreeNode ansNode = null;
+		find(root, node1, node2, ansNode);
+		return ansNode;
+	}
+
+	public static boolean find(TreeNode root, TreeNode node1, TreeNode node2, TreeNode ansNode) {
+		if (root == null) {
+			return false;
+		}
+		boolean left = find(root.left, node1, node2, ansNode);
+		boolean right = find(root.right, node1, node2, ansNode);
+		if ((left && right) || (root.val == node1.val || root.val == node2.val) && (left || right)) {
+			ansNode = root;
+		}
+		return left || right || (root.val == node1.val || root.val == node2.val);
+	}
+
+	public static int random5() {
+		return 1;
+	}
+
+	public static int random7() {
+		int num;
+		do {
+			num = (random5() - 1) * 5 + random5();
+		} while (num > 21);
+		return num % 7 + 1;
+	}
+
+
+	public static TreeNode buildTree(int[] in, int[] post) {
+		return build(in, 0, in.length - 1, post, 0, post.length - 1);
+	}
+
+	public static TreeNode build(int[] in, int l1, int r1, int[] post, int l2, int r2) {
+		if (l1 > r1) {
+			return null;
+		}
+		int value = post[r2];
+		TreeNode root = new TreeNode(value);
+		int len = 0;
+		while (in[l1 + len] != value) {
+			len++;
+		}
+
+		root.left = build(in, l1, l1 + len - 1, post, l2, l2 + len - 1);
+		root.right = build(in, l1 + len + 1, r1, post, l2 + len, r2 - 1);
+		return root;
+	}
+
+//	public static void main(String[] args) {
+//		TreeNode root = buildTree(new int[]{4, 2, 5, 1, 6, 3, 7}, new int[]{4, 5, 2, 6, 7, 3, 1});
+//		TreeNode.printTree(root);
+//	}
+
+	public static int shortestSubarray(int[] A, int K) {
+		int n = A.length;
+		long[] p = new long[n + 1];
+		for (int i = 0; i < n; i++) {
+			p[i + 1] = p[i] + (long) A[i];
+		}
+		int ans = n + 1;
+		Deque<Integer> deque = new LinkedList<>();
+		for (int i = 0; i < n + 1; i++) {
+			while (!deque.isEmpty() && p[deque.getLast()] >= p[i]) {
+				deque.removeLast();
+			}
+			while (!deque.isEmpty() && p[deque.getFirst()] + K <= p[i]) {
+				ans = Math.min(ans, i - deque.removeFirst());
+			}
+			deque.addLast(i);
+		}
+		return ans < n + 1 ? ans : -1;
+	}
+
+//	public static void main(String[] args) {
+//		System.out.println(shortestSubarray(new int[]{2, -1, 2}, 3));
+//	}
 
 }

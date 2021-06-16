@@ -3,12 +3,21 @@ package utils.ds;
 import utils.ds.reference.TreeOperation;
 
 public class TreeNode {
-	public int val = 0;
-	public TreeNode left = null;
-	public TreeNode right = null;
+	public int val;
+	public TreeNode left;
+	public TreeNode right;
+
+	public TreeNode() {
+	}
 
 	public TreeNode(int val) {
 		this.val = val;
+	}
+
+	public TreeNode(int val, TreeNode left, TreeNode right) {
+		this.val = val;
+		this.left = left;
+		this.right = right;
 	}
 
 	/**
@@ -94,7 +103,7 @@ public class TreeNode {
 //	}
 
 
-	public static void printTree(TreeNode root){
+	public static void printTree(TreeNode root) {
 		TreeOperation.show(root);
 	}
 

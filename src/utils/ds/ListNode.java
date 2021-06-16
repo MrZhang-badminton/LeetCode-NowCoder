@@ -2,9 +2,13 @@ package utils.ds;
 
 public class ListNode {
 	public int val;
-	public ListNode next = null;
+	public ListNode next;
 
 	public ListNode() {
+	}
+
+	public ListNode(int val) {
+		this.val = val;
 	}
 
 	public ListNode(int val, ListNode next) {
@@ -12,17 +16,13 @@ public class ListNode {
 		this.next = next;
 	}
 
-	public ListNode(int val) {
-		this.val = val;
-	}
-
-
 	/**
 	 * 根据数组创建链表
+	 *
 	 * @param nums
 	 * @return
 	 */
-	public static ListNode createList(int[] nums){
+	public static ListNode createList(int[] nums) {
 		return getList(nums);
 	}
 
@@ -30,6 +30,7 @@ public class ListNode {
 	 * 旧版本根据数组，创建链表
 	 * 保留旧版本，用于兼容之前写的代码
 	 * 最新版本的应该使用上述createList函数
+	 *
 	 * @param nums
 	 * @return
 	 */
