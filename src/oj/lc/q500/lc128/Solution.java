@@ -1,5 +1,6 @@
 package oj.lc.q500.lc128;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,11 +14,12 @@ public class Solution {
 	/**
 	 * 哈希表法
 	 * 时间复杂度为O(n)
+	 *
 	 * @param nums
 	 * @return
 	 */
 	public static int longestConsecutive(int[] nums) {
-		if(nums.length == 0){
+		if (nums.length == 0) {
 			return 0;
 		}
 		Set<Integer> set = new HashSet<>();
@@ -40,7 +42,33 @@ public class Solution {
 		return longestLen;
 	}
 
+	/**
+	 * 快速排序
+	 * @param nums
+	 * @return
+	 */
+	public static int longestConsecutive2(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
+		Arrays.sort(nums);
+		int max = 1;
+		int sum = 1;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] == nums[i - 1]) {
+				continue;
+			}
+			if (nums[i] - 1 == nums[i - 1]) {
+				sum++;
+			} else {
+				sum = 1;
+			}
+			max = Math.max(max, sum);
+		}
+		return max;
+	}
+
 	public static void main(String[] args) {
-		System.out.println(longestConsecutive(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}));
+		System.out.println(longestConsecutive2(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}));
 	}
 }
