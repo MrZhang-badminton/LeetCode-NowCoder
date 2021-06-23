@@ -1,4 +1,4 @@
-package oj.lc.temp.lc85;
+package oj.lc.q500.lc85;
 
 import java.util.Arrays;
 import java.util.Deque;
