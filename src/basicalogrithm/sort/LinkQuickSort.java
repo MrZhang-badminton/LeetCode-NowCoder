@@ -1,4 +1,4 @@
-package basealogrithm.sort;
+package basicalogrithm.sort;
 
 import utils.ds.ListNode;
 

@@ -1,4 +1,4 @@
-package basealogrithm.common;
+package basicalogrithm.others;
 
 /**
  * @date 2021年04月21日01:40:08

@@ -1,4 +1,4 @@
-package basealogrithm.strings;
+package basicalogrithm.strings;
 
 
 public class StringMatch {

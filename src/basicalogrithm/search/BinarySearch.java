@@ -1,4 +1,4 @@
-package basealogrithm.search;
+package basicalogrithm.search;
 
 
 public class BinarySearch {

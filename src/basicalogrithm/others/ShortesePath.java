@@ -1,4 +1,4 @@
-package basealogrithm.common;
+package basicalogrithm.others;
 
 
 import java.util.Arrays;

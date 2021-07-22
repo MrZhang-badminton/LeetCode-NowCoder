@@ -1,4 +1,4 @@
-package basealogrithm.trees;
+package basicalogrithm.trees;
 
 public class StringsExercise {
 
