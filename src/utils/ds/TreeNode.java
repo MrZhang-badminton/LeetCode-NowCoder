@@ -108,13 +108,13 @@ public class TreeNode {
 	}
 
 
-	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8});
-
-		TreeNode.printTree(root);
-
-
-//		System.out.println(getTreeHeight(root));
-	}
+//	public static void main(String[] args) {
+//		TreeNode root = TreeNode.createTree(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8});
+//
+//		TreeNode.printTree(root);
+//
+//
+////		System.out.println(getTreeHeight(root));
+//	}
 
 }

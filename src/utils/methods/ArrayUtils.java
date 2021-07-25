@@ -46,8 +46,8 @@ public class ArrayUtils {
 		System.out.println();
 	}
 
-	public static void main(String[] args) {
-		printArray(new int[][]{{1, 2, 4}, {3, 4, 10}, {4, 2, 5}});
-
-	}
+//	public static void main(String[] args) {
+//		printArray(new int[][]{{1, 2, 4}, {3, 4, 10}, {4, 2, 5}});
+//
+//	}
 }
