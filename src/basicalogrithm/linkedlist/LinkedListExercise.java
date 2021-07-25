@@ -6,8 +6,8 @@ public class LinkedListExercise {
 
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{1,2,3,4,5,6});
-		ListNode.printListNode(removeLastK(head,4));
+		ListNode head = ListNode.getList(new int[]{1, 2, 3, 4, 5, 6});
+		ListNode.printListNode(removeLastK(head, 4));
 	}
 
 

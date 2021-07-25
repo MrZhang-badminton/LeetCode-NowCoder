@@ -11,13 +11,13 @@ public class DeleteDuplicates {
 		}
 
 		ListNode p = head, q = head.next;
-		if(q == null) {
+		if (q == null) {
 			return head;
 		}
 		while (q != null && q.val == p.val) {
 			q = q.next;
 		}
-		if(q == head.next) {
+		if (q == head.next) {
 			p.next = deleteDuplicates(q);
 		} else {
 			p = deleteDuplicates(q);

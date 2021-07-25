@@ -59,9 +59,9 @@ public class LinkQuickSort {
 		}
 
 		ListNode pivot = null;
-		if(head.next != null && head.next.next != null){
+		if (head.next != null && head.next.next != null) {
 			pivot = findMidNodeandRemove(head);
-		}else {
+		} else {
 			pivot = head;
 			head = head.next;
 		}

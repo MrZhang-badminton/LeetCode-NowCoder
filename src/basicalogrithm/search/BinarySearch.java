@@ -29,6 +29,7 @@ public class BinarySearch {
 
 	/**
 	 * 找到target，并且输出第一个target的index
+	 *
 	 * @param nums
 	 * @param target
 	 * @return
@@ -40,7 +41,7 @@ public class BinarySearch {
 			if (nums[mid] < target) {
 				pos = mid;
 				l = mid + 1;
-			}else {
+			} else {
 				r = mid - 1;
 			}
 		}

@@ -37,7 +37,7 @@ public class ArrayUtils {
 				System.out.print(nums[i][j] + ", ");
 			}
 			System.out.print("]");
-			if(i != nr-1){
+			if (i != nr - 1) {
 				System.out.print(",");
 			}
 			System.out.println();
