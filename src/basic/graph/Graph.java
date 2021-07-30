@@ -1,4 +1,4 @@
-package basicalogrithm.graph;
+package basic.graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

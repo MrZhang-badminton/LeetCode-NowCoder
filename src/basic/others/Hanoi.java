@@ -1,4 +1,4 @@
-package basicalogrithm.others;
+package basic.others;
 
 
 import java.util.Scanner;

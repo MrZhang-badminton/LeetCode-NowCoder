@@ -1,10 +1,7 @@
-package basicalogrithm.trees;
+package basic.trees;
 
 import utils.ds.TreeNode;
 
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.PipedInputStream;
 import java.util.Deque;
 import java.util.LinkedList;
 

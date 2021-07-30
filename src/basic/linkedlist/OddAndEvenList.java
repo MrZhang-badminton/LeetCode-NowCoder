@@ -1,4 +1,4 @@
-package basicalogrithm.linkedlist;
+package basic.linkedlist;
 
 import utils.ds.ListNode;
 

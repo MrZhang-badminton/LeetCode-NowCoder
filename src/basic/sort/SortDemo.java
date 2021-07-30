@@ -1,4 +1,4 @@
-package basicalogrithm.sort;
+package basic.sort;
 
 /**
  * @author Peter Hua

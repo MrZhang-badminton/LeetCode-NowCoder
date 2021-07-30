@@ -1,4 +1,4 @@
-package basicalogrithm.trees;
+package basic.trees;
 
 import utils.ds.TreeNode;
 

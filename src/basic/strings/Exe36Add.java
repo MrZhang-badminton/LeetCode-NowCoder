@@ -1,4 +1,4 @@
-package basicalogrithm.strings;
+package basic.strings;
 
 public class Exe36Add {
 
