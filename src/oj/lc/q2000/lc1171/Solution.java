@@ -12,6 +12,12 @@ import java.util.*;
  */
 public class Solution {
 
+	/**
+	 * 该方法来自题解
+	 * 比较巧妙
+	 * @param head
+	 * @return
+	 */
 	public static ListNode removeZeroSumSublists(ListNode head) {
 		ListNode dummy = new ListNode();
 		dummy.next = head;
