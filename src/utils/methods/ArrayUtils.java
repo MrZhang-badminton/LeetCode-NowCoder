@@ -1,5 +1,7 @@
 package utils.methods;
 
+import java.util.Objects;
+
 public class ArrayUtils {
 	/**
 	 * 打印数组
@@ -7,6 +9,10 @@ public class ArrayUtils {
 	 * @param nums
 	 */
 	public static void printArray(int[] nums) {
+		if(Objects.isNull(nums)){
+			System.out.println("nums is null !!");
+			return;
+		}
 		System.out.print("[");
 		for (int i = 0; i < nums.length; i++) {
 			if (i < nums.length - 1) {
