@@ -117,4 +117,13 @@ public class TreeNode {
 ////		System.out.println(getTreeHeight(root));
 //	}
 
+
+	@Override
+	public String toString() {
+		return "TreeNode{" +
+				"val=" + val +
+				", left=" + left +
+				", right=" + right +
+				'}';
+	}
 }
