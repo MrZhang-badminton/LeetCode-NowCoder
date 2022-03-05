@@ -2,6 +2,8 @@ package utils.ds;
 
 import utils.ds.reference.TreeOperation;
 
+import java.util.Objects;
+
 public class TreeNode {
 	public int val;
 	public TreeNode left;
@@ -104,6 +106,10 @@ public class TreeNode {
 
 
 	public static void printTree(TreeNode root) {
+		if(Objects.isNull(root)){
+			System.out.println("root is null");
+			return;
+		}
 		TreeOperation.show(root);
 	}
 
