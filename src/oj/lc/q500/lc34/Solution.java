@@ -1,6 +1,6 @@
 package oj.lc.q500.lc34;
 
-import utils.methods.ArrayUtils;
+import utils.ArrayUtils;
 
 public class Solution {
 

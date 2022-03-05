@@ -1,6 +1,6 @@
 package utils.ds;
 
-import utils.ds.reference.TreeOperation;
+import utils.ds.ref.TreeOperation;
 
 import java.util.Objects;
 

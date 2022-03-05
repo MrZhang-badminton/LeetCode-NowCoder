@@ -1,6 +1,6 @@
 package oj.nc.nc91;
 
-import utils.methods.ArrayUtils;
+import utils.ArrayUtils;
 
 import java.util.*;
 

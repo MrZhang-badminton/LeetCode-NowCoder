@@ -1,4 +1,4 @@
-package utils.ds.reference;
+package utils.ds.ref;
 
 import utils.ds.TreeNode;
 

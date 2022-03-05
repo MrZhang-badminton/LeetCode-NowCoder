@@ -1,6 +1,6 @@
 package oj.lc.q500.lc88;
 
-import utils.methods.ArrayUtils;
+import utils.ArrayUtils;
 
 import java.util.Arrays;
 

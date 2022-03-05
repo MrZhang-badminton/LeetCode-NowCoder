@@ -1,4 +1,4 @@
-package utils.methods;
+package utils;
 
 public class SearchUtils {
 

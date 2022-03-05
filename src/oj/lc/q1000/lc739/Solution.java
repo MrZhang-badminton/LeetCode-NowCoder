@@ -1,6 +1,6 @@
 package oj.lc.q1000.lc739;
 
-import utils.methods.ArrayUtils;
+import utils.ArrayUtils;
 
 import java.util.*;
 

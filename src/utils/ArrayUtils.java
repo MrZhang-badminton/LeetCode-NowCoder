@@ -1,4 +1,4 @@
-package utils.methods;
+package utils;
 
 import java.util.Objects;
 

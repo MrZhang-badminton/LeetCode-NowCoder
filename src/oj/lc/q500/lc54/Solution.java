@@ -1,6 +1,6 @@
 package oj.lc.q500.lc54;
 
-import utils.methods.ArrayUtils;
+import utils.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

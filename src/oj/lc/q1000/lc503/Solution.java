@@ -1,6 +1,6 @@
 package oj.lc.q1000.lc503;
 
-import utils.methods.ArrayUtils;
+import utils.ArrayUtils;
 
 import java.util.Arrays;
 import java.util.Deque;
