@@ -1,6 +1,7 @@
 package oj.lc.q500.lc236;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 public class Solution {
 
@@ -74,7 +75,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4});
+		TreeNode root = TreeUtils.createTree(new int[]{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4});
 		System.out.println(lowestCommonAncestor2(root, root.left, root.right).val);
 	}
 }

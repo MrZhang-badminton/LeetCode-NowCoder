@@ -1,6 +1,7 @@
 package oj.lc.q500.lc222;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 public class Solution {
 
@@ -12,7 +13,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5, 6});
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, 4, 5, 6});
 		System.out.println(countNodes(root));
 	}
 }

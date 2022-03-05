@@ -1,6 +1,7 @@
 package oj.lc.q500.lc297;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -98,12 +99,12 @@ public class Codec1 {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{3,2,4,3});
-		TreeNode.printTree(root);
+		TreeNode root = TreeUtils.createTree(new int[]{3,2,4,3});
+		TreeUtils.printTree(root);
 		Codec1 codec1 = new Codec1();
 		System.out.println(codec1.serialize(root));
 		TreeNode node = codec1.deserialize(codec1.serialize(root));
-		TreeNode.printTree(node);
+		TreeUtils.printTree(node);
 	}
 
 

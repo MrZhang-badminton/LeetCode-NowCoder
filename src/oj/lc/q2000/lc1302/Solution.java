@@ -1,6 +1,7 @@
 package oj.lc.q2000.lc1302;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -30,7 +31,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5, -1, 6, 7, -1, -1,
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, 4, 5, -1, 6, 7, -1, -1,
 				-1, -1, -1, -1, 8});
 		System.out.println(deepestLeavesSum(root));
 	}

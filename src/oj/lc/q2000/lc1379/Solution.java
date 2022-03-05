@@ -1,6 +1,7 @@
 package oj.lc.q2000.lc1379;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 /**
  * @Description:
@@ -49,8 +50,8 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		TreeNode original = TreeNode.createTree(new int[]{7, 4, 3, -1, -1, 6, 19});
-		TreeNode cloned = TreeNode.createTree(new int[]{7, 4, 3, -1, -1, 6, 19});
+		TreeNode original = TreeUtils.createTree(new int[]{7, 4, 3, -1, -1, 6, 19});
+		TreeNode cloned = TreeUtils.createTree(new int[]{7, 4, 3, -1, -1, 6, 19});
 		TreeNode target = original;
 		System.out.println(getTargetCopy(original, cloned, target));
 	}

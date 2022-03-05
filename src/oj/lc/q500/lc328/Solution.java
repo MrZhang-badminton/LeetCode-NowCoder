@@ -1,6 +1,7 @@
 package oj.lc.q500.lc328;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 
@@ -29,8 +30,8 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		ListNode tempNode = ListNode.getList(new int[]{2,1,3,5,6,4,7});
+		ListNode tempNode = LinkedListUtils.getList(new int[]{2,1,3,5,6,4,7});
 		tempNode = oddEvenList(tempNode);
-		ListNode.printListNode(tempNode);
+		LinkedListUtils.printListNode(tempNode);
 	}
 }

@@ -1,7 +1,9 @@
 package oj.lc.q500.lc109;
 
-import utils.ds.ListNode;
-import utils.ds.TreeNode;
+import utils.LinkedListUtils;
+import utils.TreeUtils;
+import utils.node.ListNode;
+import utils.node.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +49,8 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{-10, -3, 0, 5, 9});
+		ListNode head = LinkedListUtils.getList(new int[]{-10, -3, 0, 5, 9});
 		TreeNode root = sortedListToBST(head);
-		TreeNode.printTree(root);
+		TreeUtils.printTree(root);
 	}
 }

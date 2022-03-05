@@ -1,6 +1,7 @@
 package oj.lc.q500.lc147;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 	public static ListNode insertionSortList(ListNode head) {
@@ -28,7 +29,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{4, 3, 2, 1});
-		ListNode.printListNode(insertionSortList(head));
+		ListNode head = LinkedListUtils.getList(new int[]{4, 3, 2, 1});
+		LinkedListUtils.printListNode(insertionSortList(head));
 	}
 }

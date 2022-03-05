@@ -1,6 +1,7 @@
 package oj.lc.q1000.lc543;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 public class Solution {
 
@@ -29,7 +30,7 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5});
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, 4, 5});
 		System.out.println(diameterOfBinaryTree(root));
 	}
 }

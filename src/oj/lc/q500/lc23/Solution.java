@@ -1,6 +1,7 @@
 package oj.lc.q500.lc23;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 
@@ -88,13 +89,13 @@ public class Solution {
 	public static void main(String[] args) {
 
 		ListNode[] heads = new ListNode[]{
-				ListNode.createList(new int[]{1, 2, 3, 4, 5}),
-				ListNode.createList(new int[]{2, 5, 6, 66}),
-				ListNode.createList(new int[]{4, 100, 101})
+				LinkedListUtils.createList(new int[]{1, 2, 3, 4, 5}),
+				LinkedListUtils.createList(new int[]{2, 5, 6, 66}),
+				LinkedListUtils.createList(new int[]{4, 100, 101})
 		};
 
 		ListNode head = mergeKLists2(heads);
-		ListNode.printListNode(head);
+		LinkedListUtils.printListNode(head);
 
 	}
 }

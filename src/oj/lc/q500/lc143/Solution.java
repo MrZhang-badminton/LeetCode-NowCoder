@@ -1,13 +1,14 @@
 package oj.lc.q500.lc143;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{1, 2, 3, 4});
+		ListNode head = LinkedListUtils.getList(new int[]{1, 2, 3, 4});
 		reorderList(head);
-		ListNode.printListNode(head);
+		LinkedListUtils.printListNode(head);
 	}
 
 	public static void reorderList(ListNode head) {

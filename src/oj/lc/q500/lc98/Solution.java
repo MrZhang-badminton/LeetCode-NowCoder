@@ -1,6 +1,7 @@
 package oj.lc.q500.lc98;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 public class Solution {
 
@@ -25,8 +26,8 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-//		TreeNode root = TreeNode.createTree(new int[]{5, 1, 4, -1, -1, 3, 6});
-		TreeNode root = TreeNode.createTree(new int[]{-2147483648});
+//		TreeNode root = TreeUtils.createTree(new int[]{5, 1, 4, -1, -1, 3, 6});
+		TreeNode root = TreeUtils.createTree(new int[]{-2147483648});
 
 		System.out.println(isValidBST(root));
 	}

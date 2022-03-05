@@ -1,6 +1,7 @@
 package oj.lc.q500.lc114;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 /**
  * @Classname: Solution
@@ -30,8 +31,8 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 5, 3, 4, -1, 6});
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 5, 3, 4, -1, 6});
 		flatten(root);
-		TreeNode.printTree(root);
+		TreeUtils.printTree(root);
 	}
 }

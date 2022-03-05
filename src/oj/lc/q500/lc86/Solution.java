@@ -1,6 +1,7 @@
 package oj.lc.q500.lc86;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 	public static ListNode partition(ListNode head, int x) {
@@ -26,7 +27,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.createList(new int[]{1, 4, 3, 2, 5, 2});
-		ListNode.printListNode(partition(head, 3));
+		ListNode head = LinkedListUtils.createList(new int[]{1, 4, 3, 2, 5, 2});
+		LinkedListUtils.printListNode(partition(head, 3));
 	}
 }

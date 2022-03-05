@@ -1,21 +1,13 @@
-package utils.ds;
+package utils;
 
-public class ListNode {
-	public int val;
-	public ListNode next;
+import utils.node.ListNode;
 
-	public ListNode() {
-	}
-
-	public ListNode(int val) {
-		this.val = val;
-	}
-
-	public ListNode(int val, ListNode next) {
-		this.val = val;
-		this.next = next;
-	}
-
+/**
+ * @Description:
+ * @Author: zhanghua
+ * @Date: 2022/3/6 12:41 上午
+ */
+public class LinkedListUtils {
 	/**
 	 * 根据数组创建链表
 	 *

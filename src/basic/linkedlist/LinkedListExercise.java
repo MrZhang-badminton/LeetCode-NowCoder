@@ -1,13 +1,14 @@
 package basic.linkedlist;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class LinkedListExercise {
 
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{1, 2, 3, 4, 5, 6});
-		ListNode.printListNode(removeLastK(head, 4));
+		ListNode head = LinkedListUtils.getList(new int[]{1, 2, 3, 4, 5, 6});
+		LinkedListUtils.printListNode(removeLastK(head, 4));
 	}
 
 

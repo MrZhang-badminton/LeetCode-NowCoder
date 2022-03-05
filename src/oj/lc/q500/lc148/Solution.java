@@ -1,6 +1,7 @@
 package oj.lc.q500.lc148;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 /**
  * 链表排序
@@ -265,7 +266,7 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{4, 2, 1, 3});
-		ListNode.printListNode(mergeSort(head));
+		ListNode head = LinkedListUtils.getList(new int[]{4, 2, 1, 3});
+		LinkedListUtils.printListNode(mergeSort(head));
 	}
 }

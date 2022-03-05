@@ -1,6 +1,7 @@
 package oj.lc.q500.lc95;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class Solution {
 	public static void main(String[] args) {
 		List<TreeNode> list = generateTrees(3);
 		for (TreeNode node : list) {
-			TreeNode.printTree(node);
+			TreeUtils.printTree(node);
 			System.out.println();
 		}
 	}

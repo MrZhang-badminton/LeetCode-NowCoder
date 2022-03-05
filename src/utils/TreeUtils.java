@@ -1,27 +1,16 @@
-package utils.ds;
+package utils;
 
-import utils.ds.ref.TreeOperation;
+import utils.node.TreeNode;
+import utils.ref.TreeOperation;
 
 import java.util.Objects;
 
-public class TreeNode {
-	public int val;
-	public TreeNode left;
-	public TreeNode right;
-
-	public TreeNode() {
-	}
-
-	public TreeNode(int val) {
-		this.val = val;
-	}
-
-	public TreeNode(int val, TreeNode left, TreeNode right) {
-		this.val = val;
-		this.left = left;
-		this.right = right;
-	}
-
+/**
+ * @Description:
+ * @Author: zhanghua
+ * @Date: 2022/3/6 12:41 上午
+ */
+public class TreeUtils {
 	/**
 	 * 根据数组构建二叉树，空节点为-1
 	 *
@@ -113,23 +102,4 @@ public class TreeNode {
 		TreeOperation.show(root);
 	}
 
-
-//	public static void main(String[] args) {
-//		TreeNode root = TreeNode.createTree(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8});
-//
-//		TreeNode.printTree(root);
-//
-//
-////		System.out.println(getTreeHeight(root));
-//	}
-
-
-	@Override
-	public String toString() {
-		return "TreeNode{" +
-				"val=" + val +
-				", left=" + left +
-				", right=" + right +
-				'}';
-	}
 }

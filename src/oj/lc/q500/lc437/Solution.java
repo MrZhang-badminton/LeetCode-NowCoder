@@ -1,6 +1,7 @@
 package oj.lc.q500.lc437;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -58,7 +59,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{10, 5, -3, 3, 2, -1, 11, 3, -2, -1, 1});
+		TreeNode root = TreeUtils.createTree(new int[]{10, 5, -3, 3, 2, -1, 11, 3, -2, -1, 1});
 		System.out.println(pathSum(root, 8));
 	}
 }

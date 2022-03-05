@@ -1,6 +1,7 @@
 package oj.lc.q500.lc103;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.*;
 
@@ -42,7 +43,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{3, 9, 20, -1, -1, 15, 7});
+		TreeNode root = TreeUtils.createTree(new int[]{3, 9, 20, -1, -1, 15, 7});
 		System.out.println(zigzagLevelOrder(root));
 	}
 }

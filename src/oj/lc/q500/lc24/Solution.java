@@ -1,6 +1,7 @@
 package oj.lc.q500.lc24;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -55,7 +56,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{1,2,3,4,5});
-		ListNode.printListNode(swapPairs2(head));
+		ListNode head = LinkedListUtils.getList(new int[]{1,2,3,4,5});
+		LinkedListUtils.printListNode(swapPairs2(head));
 	}
 }

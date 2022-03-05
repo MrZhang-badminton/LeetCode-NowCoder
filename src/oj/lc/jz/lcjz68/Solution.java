@@ -1,11 +1,12 @@
 package oj.lc.jz.lcjz68;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 public class Solution {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4});
+		TreeNode root = TreeUtils.createTree(new int[]{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4});
 		TreeNode p = root.left, q = root.left.right.right;
 		System.out.println(lowestCommonAncestor2(root, p, q).val);
 	}

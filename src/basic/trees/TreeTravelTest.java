@@ -1,14 +1,15 @@
 package basic.trees;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.*;
 
 public class TreeTravelTest {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5});
-		TreeNode.printTree(root);
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, 4, 5});
+		TreeUtils.printTree(root);
 		System.out.println(preOrder_r(root));
 	}
 

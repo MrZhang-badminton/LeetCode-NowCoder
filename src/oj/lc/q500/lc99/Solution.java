@@ -1,6 +1,7 @@
 package oj.lc.q500.lc99;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -73,9 +74,9 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{3, 1, 4, -1, -1, 2, -1});
-		TreeNode.printTree(root);
+		TreeNode root = TreeUtils.createTree(new int[]{3, 1, 4, -1, -1, 2, -1});
+		TreeUtils.printTree(root);
 		recoverTree2(root);
-		TreeNode.printTree(root);
+		TreeUtils.printTree(root);
 	}
 }

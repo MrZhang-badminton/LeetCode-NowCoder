@@ -1,6 +1,7 @@
 package oj.lc.q500.lc25;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 /**
  * 每K个翻转链表
@@ -36,7 +37,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{1, 2, 3, 4, 5});
-		ListNode.printListNode(reverseKGroup(head, 2));
+		ListNode head = LinkedListUtils.getList(new int[]{1, 2, 3, 4, 5});
+		LinkedListUtils.printListNode(reverseKGroup(head, 2));
 	}
 }

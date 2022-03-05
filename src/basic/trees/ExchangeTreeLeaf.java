@@ -1,6 +1,7 @@
 package basic.trees;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -55,9 +56,9 @@ public class ExchangeTreeLeaf {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5, 6, 7, 8});
-		TreeNode.printTree(root);
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, 4, 5, 6, 7, 8});
+		TreeUtils.printTree(root);
 		root = exchange_nr(root);
-		TreeNode.printTree(root);
+		TreeUtils.printTree(root);
 	}
 }

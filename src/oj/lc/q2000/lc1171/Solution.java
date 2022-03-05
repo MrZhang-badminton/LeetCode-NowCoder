@@ -1,6 +1,7 @@
 package oj.lc.q2000.lc1171;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 import java.util.*;
 
@@ -80,7 +81,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.createList(new int[]{1,-1});
-		ListNode.printListNode(removeZeroSumSublists(head));
+		ListNode head = LinkedListUtils.createList(new int[]{1,-1});
+		LinkedListUtils.printListNode(removeZeroSumSublists(head));
 	}
 }

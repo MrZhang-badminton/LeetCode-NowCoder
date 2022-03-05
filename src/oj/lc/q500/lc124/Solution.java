@@ -1,6 +1,7 @@
 package oj.lc.q500.lc124;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 
 /**
@@ -34,6 +35,6 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(maxPathSum(TreeNode.createTree(new int[]{-10, 9, 20, -1, -1, 15, 7})));
+		System.out.println(maxPathSum(TreeUtils.createTree(new int[]{-10, 9, 20, -1, -1, 15, 7})));
 	}
 }

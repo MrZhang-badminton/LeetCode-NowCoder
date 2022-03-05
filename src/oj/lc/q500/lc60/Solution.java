@@ -1,6 +1,7 @@
 package oj.lc.q500.lc60;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 /**
  * @date 2021年02月24日11:03:30
@@ -20,8 +21,8 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head1 = ListNode.getList(new int[]{1, 2, 3, 4, 5, 6});
-		ListNode head2 = ListNode.getList(new int[]{1, 2});
+		ListNode head1 = LinkedListUtils.getList(new int[]{1, 2, 3, 4, 5, 6});
+		ListNode head2 = LinkedListUtils.getList(new int[]{1, 2});
 		head2.next.next = head1.next.next;
 		System.out.println(getIntersectionNode(head1, head2).val);
 	}

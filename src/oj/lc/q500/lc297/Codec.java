@@ -1,6 +1,7 @@
 package oj.lc.q500.lc297;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -118,12 +119,12 @@ public class Codec {
 
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{4, -7, -3, -1, -1, -9, -3, 9, -7, -4, -1, 6, -1, -6, -6, -1, -1, 0, 6, 5, -1, 9, -1, -1, -1000, -4, -1, -1, -1, -2});
-		TreeNode.printTree(root);
+		TreeNode root = TreeUtils.createTree(new int[]{4, -7, -3, -1, -1, -9, -3, 9, -7, -4, -1, 6, -1, -6, -6, -1, -1, 0, 6, 5, -1, 9, -1, -1, -1000, -4, -1, -1, -1, -2});
+		TreeUtils.printTree(root);
 		String s = serialize(root);
 		System.out.println(s);
 		TreeNode tRoot = deserialize(s);
-		TreeNode.printTree(tRoot);
+		TreeUtils.printTree(tRoot);
 	}
 
 

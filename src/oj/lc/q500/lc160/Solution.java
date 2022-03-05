@@ -1,6 +1,7 @@
 package oj.lc.q500.lc160;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -16,8 +17,8 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head1 = ListNode.getList(new int[]{1, 2, 3, 4, 5});
-		ListNode head2 = ListNode.getList(new int[]{1, 2});
+		ListNode head1 = LinkedListUtils.getList(new int[]{1, 2, 3, 4, 5});
+		ListNode head2 = LinkedListUtils.getList(new int[]{1, 2});
 		head2.next.next = head1.next.next;
 		System.out.println(getIntersectionNode(head1, head2).val);
 	}

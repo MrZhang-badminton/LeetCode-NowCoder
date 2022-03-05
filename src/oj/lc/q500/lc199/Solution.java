@@ -1,6 +1,7 @@
 package oj.lc.q500.lc199;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.*;
 
@@ -32,7 +33,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, -1, 5, -1, 4});
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, -1, 5, -1, 4});
 		List<Integer> list = rightSideView(root);
 		System.out.println(list);
 	}

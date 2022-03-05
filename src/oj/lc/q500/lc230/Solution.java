@@ -1,6 +1,7 @@
 package oj.lc.q500.lc230;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 public class Solution {
 
@@ -23,7 +24,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{5,3,6,2,4,-1,-1,1});
+		TreeNode root = TreeUtils.createTree(new int[]{5,3,6,2,4,-1,-1,1});
 //		System.out.println();
 		System.out.println(kthSmallest(root, 3));
 	}

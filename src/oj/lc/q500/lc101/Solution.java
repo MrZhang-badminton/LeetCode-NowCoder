@@ -1,6 +1,7 @@
 package oj.lc.q500.lc101;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -60,7 +61,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 2});
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 2});
 		System.out.println(isSymmetric2(root));
 	}
 }

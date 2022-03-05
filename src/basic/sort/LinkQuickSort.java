@@ -1,6 +1,7 @@
 package basic.sort;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 /**
  * 链表快排
@@ -11,7 +12,7 @@ import utils.ds.ListNode;
 public class LinkQuickSort {
 
 	public static void main(String[] args) {
-		ListNode.printListNode(sortList(ListNode.getList(new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1})));
+		LinkedListUtils.printListNode(sortList(LinkedListUtils.getList(new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1})));
 
 	}
 

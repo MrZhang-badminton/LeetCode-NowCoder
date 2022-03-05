@@ -1,6 +1,7 @@
 package basic.trees;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
 public class LevelOrderRelated {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{1, 2, 3, 4, 5, 6, 7});
+		TreeNode root = TreeUtils.createTree(new int[]{1, 2, 3, 4, 5, 6, 7});
 		System.out.println(levelOrder(root));
 	}
 

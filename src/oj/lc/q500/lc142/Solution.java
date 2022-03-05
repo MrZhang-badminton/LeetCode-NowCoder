@@ -1,6 +1,7 @@
 package oj.lc.q500.lc142;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 
@@ -40,7 +41,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.createList(new int[]{3, 2, 0, -4});
+		ListNode head = LinkedListUtils.createList(new int[]{3, 2, 0, -4});
 		head.next.next.next.next = head.next;
 		System.out.println(detectCycle2(head).val);
 	}

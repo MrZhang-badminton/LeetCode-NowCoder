@@ -1,6 +1,7 @@
 package basic.linkedlist;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 /**
  * 给定一个奇数位升序，偶数位降序的链表，将其重新排列
@@ -87,8 +88,8 @@ public class OddAndEvenList {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.createList(new int[]{1, 8, 3, 6, 5, 4, 7, 2});
+		ListNode head = LinkedListUtils.createList(new int[]{1, 8, 3, 6, 5, 4, 7, 2});
 		head = sort(head);
-		ListNode.printListNode(head);
+		LinkedListUtils.printListNode(head);
 	}
 }

@@ -1,7 +1,7 @@
 package basic.linkedlist;
 
 
-import utils.ds.ListNode;
+import utils.node.ListNode;
 
 public class DeleteDuplicates {
 

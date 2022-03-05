@@ -1,6 +1,7 @@
 package oj.lc.q500.lc82;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 
@@ -28,6 +29,6 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode.printListNode(deleteDuplicates(ListNode.getList(new int[]{1, 2, 3, 3, 4, 4, 5})));
+		LinkedListUtils.printListNode(deleteDuplicates(LinkedListUtils.getList(new int[]{1, 2, 3, 3, 4, 4, 5})));
 	}
 }

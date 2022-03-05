@@ -1,6 +1,7 @@
 package oj.lc.q500.lc337;
 
-import utils.ds.TreeNode;
+import utils.TreeUtils;
+import utils.node.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +50,8 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.createTree(new int[]{3, 4, 5, 1, 3, -1, 1});
-		TreeNode.printTree(root);
+		TreeNode root = TreeUtils.createTree(new int[]{3, 4, 5, 1, 3, -1, 1});
+		TreeUtils.printTree(root);
 		System.out.println(rob(root));
 	}
 }

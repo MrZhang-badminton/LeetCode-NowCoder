@@ -1,6 +1,7 @@
 package oj.lc.q500.lc92;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 public class Solution {
 
@@ -37,6 +38,6 @@ public class Solution {
 
 
 	public static void main(String[] args) {
-		ListNode.printListNode(reverseBetween2(ListNode.getList(new int[]{1, 2, 3, 4, 5}), 1, 4));
+		LinkedListUtils.printListNode(reverseBetween2(LinkedListUtils.getList(new int[]{1, 2, 3, 4, 5}), 1, 4));
 	}
 }

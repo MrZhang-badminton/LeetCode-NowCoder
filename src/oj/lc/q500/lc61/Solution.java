@@ -1,6 +1,7 @@
 package oj.lc.q500.lc61;
 
-import utils.ds.ListNode;
+import utils.LinkedListUtils;
+import utils.node.ListNode;
 
 /**
  * 旋转链表
@@ -29,7 +30,7 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(new int[]{0, 1, 2});
-		ListNode.printListNode(rotateRight(null, 0));
+		ListNode head = LinkedListUtils.getList(new int[]{0, 1, 2});
+		LinkedListUtils.printListNode(rotateRight(null, 0));
 	}
 }
