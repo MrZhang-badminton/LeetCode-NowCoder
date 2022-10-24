@@ -16,6 +16,7 @@ public class Solution {
 	/**
 	 * 该方法来自题解
 	 * 比较巧妙
+	 *
 	 * @param head
 	 * @return
 	 */
@@ -46,6 +47,7 @@ public class Solution {
 
 	/**
 	 * 貌似是比较笨的方法，耗时比较长，只击败了5.02%的用户
+	 *
 	 * @param head
 	 * @return
 	 */
@@ -68,20 +70,51 @@ public class Solution {
 			}
 			p = p.next;
 		}
-		if(list.size() <= 1){
+		if (list.size() <= 1) {
 			return null;
 		}
 		ListNode pHead = new ListNode();
 		ListNode tail = pHead;
-		for(Integer val : valList.subList(1,valList.size())){
+		for (Integer val : valList.subList(1, valList.size())) {
 			tail.next = new ListNode(val);
 			tail = tail.next;
 		}
 		return pHead.next;
 	}
 
+
+	/**
+	 * 击败了30%
+	 *
+	 * @param head
+	 * @return
+	 * @time 2022年10月25日02:00:01
+	 */
+	public ListNode removeZeroSumSublists3(ListNode head) {
+		ListNode pHead = new ListNode(0);
+		pHead.next = head;
+		ListNode p = head;
+		int count = 0;
+
+		while (p != null) {
+			count += p.val;
+			ListNode ptr = pHead;
+			int cnt = 0;
+			while (ptr != null && ptr != p && (cnt += ptr.val) != count) {
+				ptr = ptr.next;
+			}
+			if (ptr != null && cnt == count) {
+				ptr.next = p.next;
+			}
+
+			p = p.next;
+		}
+
+		return pHead.next;
+	}
+
 	public static void main(String[] args) {
-		ListNode head = LinkedListUtils.createList(new int[]{1,-1});
+		ListNode head = LinkedListUtils.createList(new int[]{1, -1});
 		LinkedListUtils.printListNode(removeZeroSumSublists(head));
 	}
 }
