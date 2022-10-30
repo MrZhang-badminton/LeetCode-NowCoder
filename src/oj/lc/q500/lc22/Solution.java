@@ -48,25 +48,23 @@ public class Solution {
 	 * @param n
 	 * @return
 	 */
-	private static List<String> retList;
-
 	public static List<String> generateParenthesis2(int n) {
-		retList = new ArrayList<>();
-		dfs("", n, 0, 0);
-		return retList;
+		List<String> ansList = new ArrayList<>();
+		dfs("", ansList, n, 0, 0);
+		return ansList;
 	}
 
-	public static void dfs(String s, int n, int lc, int rc) {
-		if (rc > lc || lc > n) {
+	private static void dfs(String s, List<String> ansList, int n, int l, int r) {
+		if (l > n || r > l) {
 			return;
 		}
-		if (lc == n && rc == n) {
-			retList.add(s);
+		if (l == n && r == n) {
+			ansList.add(s);
 		}
-		dfs(s + "(", n, lc + 1, rc);
-		dfs(s + ")", n, lc, rc + 1);
-
+		dfs(s + "(", ansList, n, l + 1, r);
+		dfs(s + ")", ansList, n, l, r + 1);
 	}
+
 
 
 	/**
