@@ -3,9 +3,12 @@ package oj.lc.q500.lc23;
 import utils.LinkedListUtils;
 import utils.node.ListNode;
 
+import java.util.*;
+
 public class Solution {
 
 	/**
+	 * 解法一
 	 * 往一个ansList分别合并链表
 	 *
 	 * @param heads
@@ -44,6 +47,7 @@ public class Solution {
 
 
 	/**
+	 * 解法二
 	 * 归并合并
 	 *
 	 * @param heads
@@ -86,6 +90,34 @@ public class Solution {
 
 	}
 
+	/**
+	 * 解法三
+	 * 优先队列
+	 *
+	 * @param lists
+	 * @return
+	 */
+	public static ListNode mergeKLists3(ListNode[] lists) {
+		Queue<ListNode> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(o -> o.val));
+
+		Arrays.stream(lists).filter(Objects::nonNull).forEach(priorityQueue::offer);
+		ListNode pHead = new ListNode(-1);
+		ListNode p = pHead;
+
+		while (!priorityQueue.isEmpty()) {
+			ListNode node = priorityQueue.poll();
+			ListNode next = node.next;
+			p.next = node;
+			p = p.next;
+			node.next = null;
+			if (Objects.nonNull(next)) {
+				priorityQueue.offer(next);
+			}
+		}
+		return pHead.next;
+	}
+
+
 	public static void main(String[] args) {
 
 		ListNode[] heads = new ListNode[]{
@@ -94,7 +126,7 @@ public class Solution {
 				LinkedListUtils.createList(new int[]{4, 100, 101})
 		};
 
-		ListNode head = mergeKLists2(heads);
+		ListNode head = mergeKLists3(heads);
 		LinkedListUtils.printListNode(head);
 
 	}
