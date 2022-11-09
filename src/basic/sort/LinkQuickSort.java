@@ -7,7 +7,7 @@ import utils.node.ListNode;
  * 链表快排
  *
  * @author Peter Hua
- * @date 2021年04月22日00:48:53p.next = pivot;
+ * @date 2021年04月22日00:48:53
  */
 public class LinkQuickSort {
 
@@ -112,7 +112,6 @@ public class LinkQuickSort {
 				fast = fast.next;
 			}
 		}
-		ListNode midNode = slow;
 		pre.next = slow.next;
 		slow.next = null;
 		return slow;

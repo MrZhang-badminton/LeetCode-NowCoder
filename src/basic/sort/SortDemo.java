@@ -10,7 +10,7 @@ public class SortDemo {
 
 	public static void main(String[] args) {
 		//调用排序函数
-		int[] ans = mergeSort(new int[]{5, 1, 2, 8, 3, 10, 12});
+		int[] ans = quickSort(new int[]{5, 1, 2, 8, 3, 10, 12});
 
 
 		for (int i = 0; i < ans.length; i++) {
@@ -73,36 +73,40 @@ public class SortDemo {
 	/**
 	 * 快速排序
 	 *
-	 * @param arr
+	 * @param nums
 	 * @return
 	 */
-	public static int[] quickSort(int[] arr) {
-		qSort(arr, 0, arr.length - 1);
-		return arr;
+	public static int[] quickSort(int[] nums) {
+		quick(nums, 0, nums.length - 1);
+		return nums;
 	}
 
-	public static void qSort(int[] arr, int left, int right) {
+	private static void quick(int[] arr, int left, int right) {
 		if (left >= right) {
 			return;
 		}
+
 		int pivot = arr[left];
 		int l = left, r = right;
 		while (l < r) {
-			while (l < r && arr[r] >= pivot) {
+			while (l < r && arr[r] > pivot) {
 				r--;
 			}
-			arr[l++] = arr[r];
+			if (l < r) {
+				arr[l++] = arr[r];
+			}
 			while (l < r && arr[l] < pivot) {
 				l++;
 			}
-			arr[r--] = arr[l];
+			if (l < r) {
+				arr[r--] = arr[l];
+			}
 		}
 		arr[l] = pivot;
-		qSort(arr, left, l - 1);
-		qSort(arr, l + 1, right);
+		quick(arr, left, l - 1);
+		quick(arr, l + 1, right);
 
 	}
-
 
 	/**
 	 * 堆排序
@@ -148,11 +152,14 @@ public class SortDemo {
 		while (i <= end) {
 			int left = i * 2 + 1;
 			int right = left + 1;
+			// index指向值最大的子节点
 			int index = left;
 
+			// 如果有右子节点且大于左节点, 则index指向右节点
 			if (right <= end && arr[left] < arr[right]) {
 				index = right;
 			}
+			// 如果有子节点, 并且子节点中最大的大于当前节点, 则交换
 			if (index <= end && arr[i] < arr[index]) {
 				swap(arr, i, index);
 			}
