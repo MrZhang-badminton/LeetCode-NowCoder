@@ -8,6 +8,13 @@ package oj.lc.q1000.lc704;
 public class Solution {
 
 
+	/**
+	 * 二分查找
+	 *
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
 	public static int search(int[] nums, int target) {
 		int l = 0, r = nums.length - 1;
 		while (l <= r) {
